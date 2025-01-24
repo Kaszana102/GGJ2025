@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://rm424ua78d16"]
+[gd_scene load_steps=2 format=3 uid="uid://rm424ua78d16"]
+
+[ext_resource type="PackedScene" uid="uid://d4j0s5omai0u7" path="res://Prefabs/game_manager.tscn" id="1_xg8nn"]
 
 [node name="KubaSandbox" type="Node3D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_xg8nn")]
