@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnrlyjun6im18"]
+
+[ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="1_4yytf"]
+[ext_resource type="PackedScene" uid="uid://irl3y74jd2hi" path="res://Prefabs/Structures/test_structure.tscn" id="2_m7u5a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hw5id"]
+size = Vector3(0.7, 2, 0.7)
+
+[node name="TestStructureGhost" type="Node3D"]
+script = ExtResource("1_4yytf")
+structure = ExtResource("2_m7u5a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_hw5id")

@@ -2,7 +2,6 @@ class_name RaycastCamera3D
 
 extends Camera3D
 
-@export var raycast_indicator: Node3D
 @export var ray_length: float = 100
 
 
@@ -21,10 +20,4 @@ func get_raycast_position(): # -> Vector3:
 		return raycast_position
 		
 	return null
-
-## Todo, only for debug, remove this
-func _process(delta: float) -> void:
-	var pos = get_raycast_position()
-	if pos:
-		raycast_indicator.position = pos
 	

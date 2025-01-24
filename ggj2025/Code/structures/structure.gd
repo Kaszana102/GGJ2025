@@ -1,4 +1,6 @@
-extends Node
+class_name Structure
+
+extends Node3D
 
 @export var radius : float = 1
 ## energy consumption per second
