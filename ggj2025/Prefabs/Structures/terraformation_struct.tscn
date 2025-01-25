@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1fywu4be4bpa"]
+[gd_scene load_steps=3 format=3 uid="uid://c1fywu4be4bpa"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_6uqwd"]
 
+[sub_resource type="TorusMesh" id="TorusMesh_o1o0r"]
+
 [node name="TerraformationStruct" type="Node3D"]
 script = ExtResource("1_6uqwd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_o1o0r")

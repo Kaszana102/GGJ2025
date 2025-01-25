@@ -2,8 +2,7 @@ class_name Structure
 
 extends Node3D
 
-	
-@export var radius : float = 1
+
 ## energy consumption per second
 @export var energy_consumption : float  = 1
 @export var active : bool = true
@@ -13,6 +12,8 @@ extends Node3D
 ## amount per second
 @export var produced_resource_amount : float
 @export var production_requirement : ResourceRequirement
+
+var ore_deposit: Ore
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,6 +49,5 @@ func produce(delta: float):
 	GameManager.add_resource(
 		produced_resource_type,
 		produced_amount
-	)
-	return produced_amount
+	)	
 	

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnxqlfqslkxoh"]
+
+[ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="1_w0qig"]
+[ext_resource type="PackedScene" uid="uid://c1fywu4be4bpa" path="res://Prefabs/Structures/terraformation_struct.tscn" id="2_rqnps"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_ddnax"]
+
+[node name="TerraformationGhost" type="Node3D"]
+script = ExtResource("1_w0qig")
+structure = ExtResource("2_rqnps")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("TorusMesh_ddnax")
