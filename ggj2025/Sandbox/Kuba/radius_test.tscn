@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0nw6jjboc46w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t858j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fw6q"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.552941)
+
+[sub_resource type="Shader" id="Shader_0v3op"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	ALBEDO = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kgugv"]
+render_priority = 0
+shader = SubResource("Shader_0v3op")
+
+[node name="RadiusTest" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_t858j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03786, 0)
+mesh = SubResource("BoxMesh_t858j")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_6fw6q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84051, 0)
+mesh = SubResource("BoxMesh_t858j")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("ShaderMaterial_kgugv")

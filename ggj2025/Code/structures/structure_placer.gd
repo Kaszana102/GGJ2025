@@ -36,3 +36,4 @@ func _process(delta: float) -> void:
 		var place_position = _camera.get_raycast_position()
 		if place_position:
 			_structure_ghost.position = place_position
+			_structure_ghost.can_place()

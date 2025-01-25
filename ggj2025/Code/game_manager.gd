@@ -105,6 +105,23 @@ func can_place_structure(ghost_pos: Vector3, min_radius:float, max_radius:float)
 			return true
 	return false
 
+func outside_min_range(ghost_pos: Vector3, min_radius:float)->bool:
+	for city in cities:
+		var distance := city.position.distance_to(ghost_pos)
+		if  distance <  min_radius:
+			return false
+	for structure in structures:
+		var distance := structure.position.distance_to(ghost_pos)
+		if  distance < min_radius:
+			return false
+	return true
+
+func in_city_max_range(ghost_pos: Vector3, max_radius:float)->bool:
+	for city in cities:
+		var distance := city.position.distance_to(ghost_pos)
+		if  distance <=  max_radius:
+			return true
+	return false
 
 func is_point_on_ore(point:Vector3, ore_type: Ore.type)->bool:
 	for deposit in ore_deposits.get(ore_type):
