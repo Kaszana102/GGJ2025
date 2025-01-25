@@ -2,6 +2,7 @@ class_name ResourceDisplay
 
 extends HBoxContainer
 
+## class for display all resources in a hbox layout
 
 func _init() -> void:
 	for type in Resources.type:

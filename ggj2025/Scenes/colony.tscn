@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://clwghx1g1npbk"]
+[gd_scene load_steps=2 format=3 uid="uid://clwghx1g1npbk"]
 
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="1_agxwj"]
-[ext_resource type="PackedScene" uid="uid://dasvxa31lf80u" path="res://Prefabs/Structures/generator.tscn" id="2_sb0c5"]
 
 [node name="Colony" type="Node3D"]
 
@@ -9,5 +8,4 @@
 
 [node name="ColonyUi" parent="CanvasLayer" instance=ExtResource("1_agxwj")]
 
-[node name="Generator" parent="." instance=ExtResource("2_sb0c5")]
-production_requirement = null
+[node name="Map" type="Node3D" parent="."]

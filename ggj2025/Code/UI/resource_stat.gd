@@ -2,6 +2,8 @@ class_name ResourceStat
 
 extends HBoxContainer
 
+## displays single resource amount with its icon
+
 var _resource_type_to_display: Resources.type
 var resource_amount_label : Label
 

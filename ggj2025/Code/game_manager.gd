@@ -12,18 +12,25 @@ var power_generators: Array[Structure]
 
 var _blackout : bool = false
 
+var frame_duration : float = 0.1
+
 func _init() -> void:
 	for type in Resources.type.values():
 		resources[type] = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var timer = Timer.new()
+	timer.wait_time = frame_duration
+	timer.connect("timeout", _fixed_process)
+	timer.autostart = true
+	timer.start()
+	add_child(timer)
 
-
-func _process(delta: float) -> void:
-	if !_blackout:		
-		var energy_sum = calc_energy(delta)		
+func _fixed_process() -> void:
+	var delta := frame_duration
+	if !_blackout:
+		var energy_sum = calc_energy(delta)
 		if energy_sum < 0:
 			_start_blackout()
 		else:
@@ -46,7 +53,7 @@ func calc_energy(delta: float) -> float:
 	for structure in structures:
 		if structure.active:
 			energy_consumption += structure.energy_consumption * delta
-	return resources.get(Resources.type.ENERGY)-energy_consumption
+	return (resources.get(Resources.type.ENERGY)-energy_consumption) * (1.0/delta)
 
 func _start_blackout():
 	print("BLACKOUT")
@@ -71,5 +78,4 @@ func add_resource(type: Resources.type, amount: float) -> void:
 	resources[type] = resources.get(type) + amount
 
 func update_ui():
-	print(resources)
 	pass
