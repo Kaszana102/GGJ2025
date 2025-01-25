@@ -22,10 +22,10 @@ func _init() -> void:
 func _ready() -> void:
 	var timer = Timer.new()
 	timer.wait_time = frame_duration
-	timer.connect("timeout", _fixed_process)
+	timer.connect("timeout", _fixed_process)	
+	add_child(timer)
 	timer.autostart = true
 	timer.start()
-	add_child(timer)
 
 func _fixed_process() -> void:
 	var delta := frame_duration

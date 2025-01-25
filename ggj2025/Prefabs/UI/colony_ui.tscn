@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkdu5kucvf6n1"]
+[gd_scene load_steps=3 format=3 uid="uid://dkdu5kucvf6n1"]
 
 [ext_resource type="Script" path="res://Code/UI/resource_display.gd" id="1_t6ejh"]
+[ext_resource type="Script" path="res://Code/UI/blackoutUI.gd" id="2_p513n"]
 
 [node name="ColonyUi" type="Control"]
 layout_mode = 3
@@ -50,3 +51,13 @@ text = "Iron mine"
 [node name="TerraformButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
 text = "Terraform"
+
+[node name="BlackOutUI" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("2_p513n")
