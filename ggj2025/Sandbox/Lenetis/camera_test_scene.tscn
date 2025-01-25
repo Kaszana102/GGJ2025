@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6mryoov5is17"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_emloq"]
+[ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="2_5nhsx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb4hh"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_k8f8k"]
 
 [node name="TestScene" type="Node3D"]
 
@@ -34,10 +33,9 @@ shape = SubResource("BoxShape3D_sb4hh")
 transform = Transform3D(0.75, -0.0473671, 0.65974, -0.5, 0.612372, 0.612372, -0.433013, -0.789149, 0.435596, 0, 3, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_k8f8k")
-
-[node name="RaycastCamera" type="Camera3D" parent="." node_paths=PackedStringArray("raycast_indicator")]
+[node name="RaycastCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)
 script = ExtResource("1_emloq")
-raycast_indicator = NodePath("../MeshInstance3D3")
+
+[node name="CameraMovement" type="Node3D" parent="RaycastCamera"]
+script = ExtResource("2_5nhsx")
