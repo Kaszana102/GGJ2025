@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://1kbwaa3jprxn"]
+[gd_scene load_steps=22 format=3 uid="uid://1kbwaa3jprxn"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_egydw"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_njneh"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="5_pny3v"]
 [ext_resource type="PackedScene" uid="uid://b8hubehg3ensk" path="res://Prefabs/Ore/coal_ore.tscn" id="7_g7mb2"]
 [ext_resource type="PackedScene" path="res://Prefabs/Structures/city.tscn" id="8_fowyc"]
+[ext_resource type="Script" path="res://Code/structures/production.gd" id="9_ts0xk"]
+[ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_s1rcb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
 
@@ -52,6 +54,20 @@ size = Vector3(0.5, 0.5, 0.5)
 height = 0.001
 rings = 0
 cap_top = false
+
+[sub_resource type="Resource" id="Resource_5hb5i"]
+script = ExtResource("9_ts0xk")
+type = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_1kl6w"]
+script = ExtResource("9_ts0xk")
+type = 2
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_ho2sr"]
+script = ExtResource("10_s1rcb")
+products = Array[ExtResource("9_ts0xk")]([SubResource("Resource_5hb5i"), SubResource("Resource_1kl6w")])
 
 [node name="TestScene" type="Node3D"]
 
@@ -106,3 +122,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63388, 0)
 mesh = SubResource("CylinderMesh_64b4b")
+
+[node name="Structure" type="Node3D" parent="."]
+script = ExtResource("5_0tr3g")
+energy_consumption = 0.0
+production = SubResource("Resource_ho2sr")
