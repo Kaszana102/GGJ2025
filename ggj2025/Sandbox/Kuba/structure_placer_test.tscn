@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1kbwaa3jprxn"]
+[gd_scene load_steps=17 format=3 uid="uid://1kbwaa3jprxn"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_egydw"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_njneh"]
@@ -47,6 +47,11 @@ _bundled = {
 
 [sub_resource type="BoxMesh" id="BoxMesh_tmk0w"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_64b4b"]
+height = 0.001
+rings = 0
+cap_top = false
 
 [node name="TestScene" type="Node3D"]
 
@@ -97,3 +102,7 @@ mesh = SubResource("BoxMesh_tmk0w")
 
 [node name="City" parent="." instance=ExtResource("8_fowyc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63388, 0)
+mesh = SubResource("CylinderMesh_64b4b")
