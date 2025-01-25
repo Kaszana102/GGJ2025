@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyd7sto07crqg"]
+
+[ext_resource type="Script" path="res://Code/structures/city.gd" id="1_c3aw6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8kr81"]
+
+[node name="City" type="Node3D"]
+script = ExtResource("1_c3aw6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_8kr81")

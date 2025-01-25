@@ -1,15 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2v2bepsfr3vw"]
+[gd_scene load_steps=14 format=3 uid="uid://1kbwaa3jprxn"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_egydw"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_njneh"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="3_1tu4x"]
-[ext_resource type="PackedScene" uid="uid://dnrlyjun6im18" path="res://Prefabs/Structures/test_structure_ghost.tscn" id="3_w4c7i"]
+[ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="4_ad73s"]
+[ext_resource type="Script" path="res://Code/structures/structure.gd" id="5_0tr3g"]
+[ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="5_pny3v"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb4hh"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_k8f8k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ue2r"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_1f8eq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("TestStructure", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "transform", "mesh"),
+"node_count": 2,
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 2, 5, 1, 6, 2, 0),
+"variants": [ExtResource("5_0tr3g"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0), SubResource("BoxMesh_2ue2r")],
+"version": 3
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_hw5id"]
+size = Vector3(0.7, 2, 0.7)
+
+[sub_resource type="PackedScene" id="PackedScene_dpptq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("TestStructureGhost", "Node3D", "script", "structure", "MeshInstance3D", "MeshInstance3D", "transform", "mesh"),
+"node_count": 2,
+"node_paths": [NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 2, 6, 2, 7, 3, 0),
+"variants": [ExtResource("4_ad73s"), SubResource("PackedScene_1f8eq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0), SubResource("BoxMesh_hw5id")],
+"version": 3
+}
 
 [node name="TestScene" type="Node3D"]
 
@@ -40,15 +74,18 @@ shadow_enabled = true
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_k8f8k")
 
+[node name="StructurePlacer" type="Node" parent="." node_paths=PackedStringArray("_camera")]
+script = ExtResource("3_1tu4x")
+_camera = NodePath("../RaycastCamera")
+
 [node name="RaycastCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)
 script = ExtResource("1_egydw")
 
 [node name="TestUI" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_structure_placer")]
 script = ExtResource("2_njneh")
-_structure_placer = NodePath("../StructurePlacer")
-_structure_ghost_prefab = ExtResource("3_w4c7i")
+_structure_placer = NodePath("../../StructurePlacer")
+_structure_ghost_prefab = SubResource("PackedScene_dpptq")
 
-[node name="StructurePlacer" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_camera")]
-script = ExtResource("3_1tu4x")
-_camera = NodePath("..")
+[node name="ColonyUi" parent="." node_paths=PackedStringArray("structure_placer") instance=ExtResource("5_pny3v")]
+structure_placer = NodePath("../StructurePlacer")

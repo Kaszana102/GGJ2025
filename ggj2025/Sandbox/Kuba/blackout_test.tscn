@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwrgmg8ehhpqj"]
+[gd_scene load_steps=3 format=3 uid="uid://cx5qw02artwrt"]
 
 [ext_resource type="PackedScene" uid="uid://dj5mq8cpsl0jx" path="res://Prefabs/Structures/farm.tscn" id="2_qg3ad"]
 [ext_resource type="PackedScene" uid="uid://dasvxa31lf80u" path="res://Prefabs/Structures/generator.tscn" id="2_twosf"]
