@@ -68,7 +68,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				_rotation_anchor = _camera.get_raycast_position()
 			else:
 				print("raycast position null")
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_MIDDLE:
 			_lmb_pressed = event.pressed
 			_drag_requested = event.pressed
 			
