@@ -37,7 +37,6 @@ shadow_enabled = true
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_k8f8k")
 
-[node name="RaycastCamera" type="Camera3D" parent="." node_paths=PackedStringArray("raycast_indicator")]
+[node name="RaycastCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)
 script = ExtResource("1_emloq")
-raycast_indicator = NodePath("../MeshInstance3D3")

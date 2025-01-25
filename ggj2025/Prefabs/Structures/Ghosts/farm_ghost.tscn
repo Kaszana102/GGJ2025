@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6hej5vu88au1"]
+
+[ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="1_euhxe"]
+[ext_resource type="PackedScene" uid="uid://dj5mq8cpsl0jx" path="res://Prefabs/Structures/farm.tscn" id="2_jvd5a"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gkrgj"]
+
+[node name="FarmGhost" type="Node3D"]
+script = ExtResource("1_euhxe")
+structure = ExtResource("2_jvd5a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CapsuleMesh_gkrgj")

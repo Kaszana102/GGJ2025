@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://23trqxb2pdny"]
+
+[ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="1_hi3l8"]
+[ext_resource type="PackedScene" uid="uid://dasvxa31lf80u" path="res://Prefabs/Structures/generator.tscn" id="2_m02ha"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k1ln6"]
+
+[node name="GeneratorGhost" type="Node3D"]
+script = ExtResource("1_hi3l8")
+structure = ExtResource("2_m02ha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_k1ln6")
