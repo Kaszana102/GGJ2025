@@ -77,6 +77,11 @@ func get_resource(type: Resources.type, amount: float) -> float:
 	var return_amount = resources[type]
 	resources[type] = 0
 	return return_amount
+	
+func has_resource(type: Resources.type, amount: float) -> bool:
+	if resources[type] >= amount:
+		return true
+	return false
 
 func add_resource(type: Resources.type, amount: float) -> void:
 	resources[type] = resources.get(type) + amount

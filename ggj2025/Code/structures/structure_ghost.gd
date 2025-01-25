@@ -7,11 +7,19 @@ extends Node3D
 
 ## The structure that will be placed
 @export var structure: PackedScene
+
 @export var min_radius : float = 1
 @export var max_radius : float = 5
 
+@export var place_cost : Array[ResourceRequirement] = []
+
 func can_place() -> bool:
 	var can := GameManager.can_place_structure(position, min_radius,max_radius)
+	for resource_cost in place_cost:
+		if not GameManager.has_resource(resource_cost.type, resource_cost.amount):
+			can = false
+			break
+	
 	if can:
 		pass
 	else:
@@ -21,6 +29,9 @@ func can_place() -> bool:
 func place() -> bool:
 	if not can_place():
 		return false
+		
+	for resource_cost in place_cost:
+		GameManager.get_resource(resource_cost.type, resource_cost.amount)
 		
 	var placed_structure = structure.instantiate()
 	placed_structure.transform = global_transform
