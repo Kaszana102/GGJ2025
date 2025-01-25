@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj5mq8cpsl0jx"]
+
+[ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_k8wq4"]
+[ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_5x31f"]
+
+[sub_resource type="Resource" id="Resource_uvhpr"]
+script = ExtResource("2_5x31f")
+type = 1
+amount = 1.0
+
+[node name="Farm" type="Node"]
+script = ExtResource("1_k8wq4")
+produced_resource_type = 3
+produced_resource_amount = 10.0
+production_requirement = SubResource("Resource_uvhpr")

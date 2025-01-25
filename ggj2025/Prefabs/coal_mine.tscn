@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkannkc13ctp"]
+
+[ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_8smuu"]
+[ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_kycrv"]
+
+[sub_resource type="Resource" id="Resource_36b2d"]
+script = ExtResource("2_kycrv")
+type = 1
+amount = 1.0
+
+[node name="CoalMine" type="Node"]
+script = ExtResource("1_8smuu")
+produced_resource_amount = 10.0
+production_requirement = SubResource("Resource_36b2d")
