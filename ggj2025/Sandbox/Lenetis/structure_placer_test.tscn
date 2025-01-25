@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://1kbwaa3jprxn"]
 
-[ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_egydw"]
+[ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="1_tp6yf"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_njneh"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="3_1tu4x"]
 [ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="4_ad73s"]
@@ -80,7 +80,7 @@ _camera = NodePath("../RaycastCamera")
 
 [node name="RaycastCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)
-script = ExtResource("1_egydw")
+script = ExtResource("1_tp6yf")
 
 [node name="TestUI" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_structure_placer")]
 script = ExtResource("2_njneh")

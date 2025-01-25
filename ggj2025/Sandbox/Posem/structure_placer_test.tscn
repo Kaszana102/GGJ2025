@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6mryoov5is17"]
+[gd_scene load_steps=9 format=3 uid="uid://ds7gjmr1x6pkg"]
 
-[ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_emloq"]
-[ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="2_5nhsx"]
+[ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="1_nciwg"]
+[ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_wg3im"]
+[ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_frg55"]
+[ext_resource type="PackedScene" uid="uid://dnrlyjun6im18" path="res://Prefabs/Structures/test_structure_ghost.tscn" id="3_dmhis"]
+[ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="4_gyu70"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb4hh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_k8f8k"]
 
 [node name="TestScene" type="Node3D"]
 
@@ -37,5 +42,19 @@ shadow_enabled = true
 mesh = SubResource("SphereMesh_k8f8k")
 
 [node name="RaycastCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)
-script = ExtResource("1_emloq")
+transform = Transform3D(1, 0, 0, 0, 0.140901, 0.990024, 0, -0.990024, 0.140901, 0, 1.86, 0)
+script = ExtResource("1_wg3im")
+
+[node name="TestUI" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_structure_placer")]
+script = ExtResource("2_frg55")
+_structure_placer = NodePath("../StructurePlacer")
+_structure_ghost_prefab = ExtResource("3_dmhis")
+
+[node name="StructurePlacer" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_camera")]
+script = ExtResource("4_gyu70")
+_camera = NodePath("..")
+
+[node name="CameraMovement" type="Node3D" parent="RaycastCamera"]
+script = ExtResource("1_nciwg")
+rotate_speed = 0.3
+pan_speed = 1.5
