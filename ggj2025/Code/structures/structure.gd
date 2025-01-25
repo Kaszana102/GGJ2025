@@ -2,8 +2,7 @@ class_name Structure
 
 extends Node3D
 
-	
-@export var radius : float = 1
+
 ## energy consumption per second
 @export var energy_consumption : float  = 1
 @export var active : bool = true

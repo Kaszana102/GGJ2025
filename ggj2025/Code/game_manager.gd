@@ -9,6 +9,7 @@ var resources : Dictionary= {}
 var structures: Array[Structure]
 ## list of all non generating power structures
 var power_generators: Array[Structure]
+var cities: Array[City]
 
 var _blackout : bool = false
 
@@ -42,7 +43,10 @@ func add_structure(structure : Structure):
 	
 func add_generator(generator : Structure):
 	power_generators.append(generator)
-	
+
+func add_city(city: City):
+	cities.append(city)
+
 func calc_energy(delta: float) -> float:
 	resources[Resources.type.ENERGY] = 0
 	for generator in power_generators:
@@ -79,3 +83,10 @@ func add_resource(type: Resources.type, amount: float) -> void:
 
 func update_ui():
 	pass
+
+func can_place_structure(ghost_pos: Vector3, min_radius:float, max_radius:float)->bool:
+	for city in cities:
+		var distance := city.position.distance_to(ghost_pos)
+		if  distance < min_radius or   max_radius<distance:
+			return false
+	return true

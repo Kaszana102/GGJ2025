@@ -7,9 +7,16 @@ extends Node3D
 
 ## The structure that will be placed
 @export var structure: PackedScene
+@export var min_radius : float = 1
+@export var max_radius : float = 5
 
 func can_place() -> bool:
-	return true  # todo
+	var can := GameManager.can_place_structure(position, min_radius,max_radius)
+	if can:
+		pass
+	else:
+		pass
+	return can
 
 func place() -> bool:
 	if not can_place():
