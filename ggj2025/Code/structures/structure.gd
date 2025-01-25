@@ -13,6 +13,8 @@ extends Node3D
 @export var produced_resource_amount : float
 @export var production_requirement : ResourceRequirement
 
+var ore_deposit: Ore
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if produced_resource_type == Resources.type.ENERGY:
@@ -47,6 +49,5 @@ func produce(delta: float):
 	GameManager.add_resource(
 		produced_resource_type,
 		produced_amount
-	)
-	return produced_amount
+	)	
 	

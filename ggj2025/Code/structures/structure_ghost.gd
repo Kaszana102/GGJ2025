@@ -9,23 +9,27 @@ extends Node3D
 @export var structure: PackedScene
 @export var min_radius : float = 1
 @export var max_radius : float = 5
+@export var needed_deposit_ore : DepositRequirement
 
 func can_place() -> bool:
 	var can := GameManager.can_place_structure(position, min_radius,max_radius)
+	if needed_deposit_ore != null:
+		can = can or GameManager.is_point_on_ore(position, needed_deposit_ore.type)
+	
 	if can:
 		pass
 	else:
 		pass
 	return can
 
-func place() -> bool:
+func place() -> Structure:
 	if not can_place():
-		return false
+		return null
 		
 	var placed_structure = structure.instantiate()
 	placed_structure.transform = global_transform
 	get_tree().get_root().add_child(placed_structure)
-	return true
+	return placed_structure
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
