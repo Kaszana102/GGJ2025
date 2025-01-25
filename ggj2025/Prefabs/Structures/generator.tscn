@@ -8,7 +8,7 @@ script = ExtResource("2_2c7x1")
 type = 0
 amount = 1.0
 
-[node name="Generator" type="Node"]
+[node name="Generator" type="Node3D"]
 script = ExtResource("1_bkumi")
 produced_resource_type = 1
 produced_resource_amount = 10.0

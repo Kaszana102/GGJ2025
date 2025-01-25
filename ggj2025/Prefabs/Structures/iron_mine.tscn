@@ -8,7 +8,7 @@ script = ExtResource("2_upsm7")
 type = 1
 amount = 1.0
 
-[node name="IronMine" type="Node"]
+[node name="IronMine" type="Node3D"]
 script = ExtResource("1_xoteh")
 produced_resource_type = 2
 produced_resource_amount = 10.0

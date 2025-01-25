@@ -8,7 +8,7 @@ script = ExtResource("2_kycrv")
 type = 1
 amount = 1.0
 
-[node name="CoalMine" type="Node"]
+[node name="CoalMine" type="Node3D"]
 script = ExtResource("1_8smuu")
 produced_resource_amount = 10.0
 production_requirement = SubResource("Resource_36b2d")

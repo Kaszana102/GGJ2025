@@ -49,6 +49,7 @@ func calc_energy(delta: float) -> float:
 	return resources.get(Resources.type.ENERGY)-energy_consumption
 
 func _start_blackout():
+	print("BLACKOUT")
 	_blackout = true
 
 func _produce(delta: float):

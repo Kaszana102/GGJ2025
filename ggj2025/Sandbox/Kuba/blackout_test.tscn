@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwrgmg8ehhpqj"]
+
+[ext_resource type="PackedScene" uid="uid://dj5mq8cpsl0jx" path="res://Prefabs/Structures/farm.tscn" id="2_qg3ad"]
+[ext_resource type="PackedScene" uid="uid://dasvxa31lf80u" path="res://Prefabs/Structures/generator.tscn" id="2_twosf"]
+
+[node name="BlackoutTest" type="Node3D"]
+
+[node name="Generator" parent="." instance=ExtResource("2_twosf")]
+produced_resource_amount = 1.0
+production_requirement = null
+
+[node name="Farm" parent="." instance=ExtResource("2_qg3ad")]
+
+[node name="Generator2" parent="." instance=ExtResource("2_twosf")]
+
+[node name="Farm2" parent="." instance=ExtResource("2_qg3ad")]
