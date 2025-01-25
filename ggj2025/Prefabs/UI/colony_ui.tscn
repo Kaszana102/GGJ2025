@@ -42,24 +42,28 @@ alignment = 1
 
 [node name="CityButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
+tooltip_text = "City expands the terrain where you can build."
 text = "City"
 script = ExtResource("2_6hutb")
 _structure_ghost = ExtResource("4_pnpm5")
 
 [node name="CoalMineButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
+tooltip_text = "Coal mine mines coal from the deposit."
 text = "Coal mine"
 script = ExtResource("2_6hutb")
 _structure_ghost = ExtResource("4_o02jt")
 
 [node name="FarmButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
+tooltip_text = "Farm the function at the moment is unknown."
 text = "Farm"
 script = ExtResource("2_6hutb")
 _structure_ghost = ExtResource("6_1njcm")
 
 [node name="GeneratorButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
+tooltip_text = "Coal generator uses coal to produce energy."
 text = "Generator
 "
 script = ExtResource("2_6hutb")
@@ -67,12 +71,14 @@ _structure_ghost = ExtResource("7_rplwf")
 
 [node name="IronMineButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
+tooltip_text = "Iron mine mines iron from the ore deposit"
 text = "Iron mine"
 script = ExtResource("2_6hutb")
 _structure_ghost = ExtResource("8_v37mu")
 
 [node name="TerraformButton" type="Button" parent="HBoxContainer2"]
 layout_mode = 2
+tooltip_text = "Terraform building, which terraforms the climate."
 text = "Terraform"
 script = ExtResource("2_6hutb")
 _structure_ghost = ExtResource("9_ysd1l")
