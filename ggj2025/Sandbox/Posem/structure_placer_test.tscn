@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ds7gjmr1x6pkg"]
+[gd_scene load_steps=9 format=3 uid="uid://ds7gjmr1x6pkg"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="1_nciwg"]
-[ext_resource type="Script" path="res://Code/UI/billboard_button.gd" id="1_q1yvd"]
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_wg3im"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_frg55"]
-[ext_resource type="Texture2D" uid="uid://bmqt1iafsdo38" path="res://icon.svg" id="2_sw6qt"]
+[ext_resource type="PackedScene" uid="uid://dnrlyjun6im18" path="res://Prefabs/Structures/test_structure_ghost.tscn" id="3_dmhis"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="4_gyu70"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
@@ -12,9 +11,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_sb4hh"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_k8f8k"]
-
-[sub_resource type="Resource" id="Resource_oof7t"]
-metadata/__load_path__ = "res://Prefabs/Structures/test_structure_ghost.tscn"
 
 [node name="TestScene" type="Node3D"]
 
@@ -45,38 +41,14 @@ shadow_enabled = true
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_k8f8k")
 
-[node name="Billboard" type="Node3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.89897, 2, 0)
-script = ExtResource("1_q1yvd")
-
-[node name="Sprite3D5" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-texture = ExtResource("2_sw6qt")
-
-[node name="Sprite3D4" type="Sprite3D" parent="Billboard"]
-texture = ExtResource("2_sw6qt")
-
-[node name="Sprite3D3" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-texture = ExtResource("2_sw6qt")
-
-[node name="Sprite3D2" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-texture = ExtResource("2_sw6qt")
-
-[node name="Sprite3D" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-no_depth_test = true
-texture = ExtResource("2_sw6qt")
-
 [node name="RaycastCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.643416, 0.765517, 0, -0.765517, 0.643416, 0, 1.86, 0)
+transform = Transform3D(1, 0, 0, 0, 0.140901, 0.990024, 0, -0.990024, 0.140901, 0, 1.86, 0)
 script = ExtResource("1_wg3im")
 
 [node name="TestUI" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_structure_placer")]
 script = ExtResource("2_frg55")
 _structure_placer = NodePath("../StructurePlacer")
-_structure_ghost_prefab = SubResource("Resource_oof7t")
+_structure_ghost_prefab = ExtResource("3_dmhis")
 
 [node name="StructurePlacer" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_camera")]
 script = ExtResource("4_gyu70")
