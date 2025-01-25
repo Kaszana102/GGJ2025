@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://dl7h7slpgt0be"]
+[gd_scene load_steps=2 format=3 uid="uid://dl7h7slpgt0be"]
 
-[node name="MainMenu" type="Node3D"]
+[ext_resource type="Script" path="res://Code/scene_manager.gd" id="1_ja62c"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_ja62c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 93.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "TYTUŁ GRY"
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="load_colony"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="leave_game"]
