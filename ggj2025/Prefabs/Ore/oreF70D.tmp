@@ -1,4 +1,7 @@
-class_name Ore
+[gd_scene load_steps=2 format=3 uid="uid://b8hubehg3ensk"]
+
+[sub_resource type="GDScript" id="GDScript_ocgoc"]
+script/source = "class_name Ore
 
 extends Node3D
 
@@ -8,7 +11,7 @@ enum type {IRON, COAL}
 @export var ore_type: type = type.COAL
 
 func _init():
-	GameManager.add_deposit(self, ore_type)
+	GameManager.add_deposit(self)
 
 func mine(amount: float) -> float :
 	if(total_amount>=amount):
@@ -18,3 +21,9 @@ func mine(amount: float) -> float :
 		var temp = total_amount
 		total_amount = 0
 		return temp
+"
+
+[node name="Ore" type="Node3D"]
+script = SubResource("GDScript_ocgoc")
+total_amount = null
+ore_type = null

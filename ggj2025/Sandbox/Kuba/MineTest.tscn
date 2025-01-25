@@ -2,16 +2,38 @@
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_dxwvk"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_6w1um"]
-[ext_resource type="PackedScene" uid="uid://dnrlyjun6im18" path="res://Prefabs/Structures/test_structure_ghost.tscn" id="3_vnv8l"]
+[ext_resource type="PackedScene" path="res://Prefabs/Structures/test_structure_ghost.tscn" id="3_vnv8l"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="4_1wdk5"]
 [ext_resource type="Script" path="res://Code/structures/city.gd" id="5_g2c35"]
-[ext_resource type="Script" path="res://Code/Ore/ore.gd" id="6_t30ur"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vcoa2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hi264"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4syor"]
+
+[sub_resource type="GDScript" id="GDScript_ocgoc"]
+script/source = "class_name Ore
+
+extends Node3D
+
+enum type {IRON, COAL}
+
+@export var total_amount: float = 100
+@export var ore_type: type = type.COAL
+
+func _init():
+	GameManager.add_deposit(self)
+
+func mine(amount: float) -> float :
+	if(total_amount>=amount):
+		total_amount -= amount
+		return amount
+	else:
+		var temp = total_amount
+		total_amount = 0
+		return temp
+"
 
 [node name="MineTest" type="Node3D"]
 
@@ -59,4 +81,6 @@ _camera = NodePath("..")
 script = ExtResource("5_g2c35")
 
 [node name="Ore" type="Node3D" parent="."]
-script = ExtResource("6_t30ur")
+script = SubResource("GDScript_ocgoc")
+total_amount = null
+ore_type = null

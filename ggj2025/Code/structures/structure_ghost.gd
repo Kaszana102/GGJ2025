@@ -14,7 +14,7 @@ extends Node3D
 func can_place() -> bool:
 	var can := GameManager.can_place_structure(position, min_radius,max_radius)
 	if needed_deposit_ore != null:
-		can = can or GameManager.is_point_on_ore(position, needed_deposit_ore.type)
+		can = can and GameManager.is_point_on_ore(position, needed_deposit_ore.type)
 	
 	if can:
 		pass

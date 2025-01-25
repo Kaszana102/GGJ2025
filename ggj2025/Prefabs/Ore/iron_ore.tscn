@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvfqp2qsqrynp"]
+
+[ext_resource type="Script" path="res://Code/Ore/ore.gd" id="1_b0j65"]
+
+[node name="IronOre" type="Node3D"]
+script = ExtResource("1_b0j65")
+ore_type = 0

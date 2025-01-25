@@ -53,6 +53,9 @@ func add_generator(generator : Structure):
 func add_city(city: City):
 	cities.append(city)
 
+func add_deposit(ore: Ore, type: Ore.type):
+	ore_deposits.get(type).append(ore)
+	
 func calc_energy(delta: float) -> float:
 	resources[Resources.type.ENERGY] = 0
 	for generator in power_generators:
