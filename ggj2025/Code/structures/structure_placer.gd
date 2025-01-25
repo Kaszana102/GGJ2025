@@ -19,8 +19,13 @@ func clear_structure_ghost() -> void:
 
 func place_structure() -> void:
 	if has_structure_ghost():
-		var success = self._structure_ghost.place()
-		if success:
+		var placed_structure = self._structure_ghost.place()
+		if placed_structure != null:
+			if _structure_ghost.needed_deposit_ore != null:
+				placed_structure.ore_deposit = (
+					GameManager.get_ore_deposit(
+						placed_structure.position,
+						_structure_ghost.needed_deposit_ore.type))
 			self.clear_structure_ghost()
 
 func has_structure_ghost() -> bool:

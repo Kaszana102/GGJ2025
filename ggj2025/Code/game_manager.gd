@@ -10,6 +10,10 @@ var structures: Array[Structure]
 ## list of all non generating power structures
 var power_generators: Array[Structure]
 var cities: Array[City]
+## dictionary of available ore deposits on the map
+## key: ore type
+## value: array of deposits of that type
+var ore_deposits: Dictionary={}
 
 var _blackout : bool = false
 
@@ -18,6 +22,8 @@ var frame_duration : float = 0.1
 func _init() -> void:
 	for type in Resources.type.values():
 		resources[type] = 0
+	for type in Ore.type.values():
+		ore_deposits[type] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -47,6 +53,9 @@ func add_generator(generator : Structure):
 func add_city(city: City):
 	cities.append(city)
 
+func add_deposit(ore: Ore, type: Ore.type):
+	ore_deposits.get(type).append(ore)
+	
 func calc_energy(delta: float) -> float:
 	resources[Resources.type.ENERGY] = 0
 	for generator in power_generators:
@@ -92,6 +101,21 @@ func update_ui():
 func can_place_structure(ghost_pos: Vector3, min_radius:float, max_radius:float)->bool:
 	for city in cities:
 		var distance := city.position.distance_to(ghost_pos)
-		if  distance < min_radius or   max_radius<distance:
-			return false
-	return true
+		if   min_radius <= distance and distance <=  max_radius:
+			return true
+	return false
+
+
+func is_point_on_ore(point:Vector3, ore_type: Ore.type)->bool:
+	for deposit in ore_deposits.get(ore_type):
+		var distance = deposit.position.distance_to(point) 
+		if distance <= 1:
+			return true
+	return false
+
+func get_ore_deposit(point:Vector3, ore_type: Ore.type)->Ore:
+	for deposit in ore_deposits.get(ore_type):
+		var distance = deposit.position.distance_to(point) 
+		if distance <= 1:
+			return deposit
+	return null

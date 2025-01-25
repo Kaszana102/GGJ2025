@@ -10,6 +10,7 @@ extends Node3D
 
 @export var min_radius : float = 1
 @export var max_radius : float = 5
+@export var needed_deposit_ore : DepositRequirement
 
 @export var place_cost : Array[ResourceRequirement] = []
 
@@ -19,6 +20,9 @@ func can_place() -> bool:
 		if not GameManager.has_resource(resource_cost.type, resource_cost.amount):
 			can = false
 			break
+			
+	if needed_deposit_ore != null:
+		can = can and GameManager.is_point_on_ore(position, needed_deposit_ore.type)
 	
 	if can:
 		pass
@@ -26,9 +30,9 @@ func can_place() -> bool:
 		pass
 	return can
 
-func place() -> bool:
+func place() -> Structure:
 	if not can_place():
-		return false
+		return null
 		
 	for resource_cost in place_cost:
 		GameManager.get_resource(resource_cost.type, resource_cost.amount)
@@ -36,7 +40,7 @@ func place() -> bool:
 	var placed_structure = structure.instantiate()
 	placed_structure.transform = global_transform
 	get_tree().get_root().add_child(placed_structure)
-	return true
+	return placed_structure
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
