@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://v11rhubhlivl"]
+
+[ext_resource type="PackedScene" uid="uid://oluf4y4ah8ab" path="res://Art/models/blender/layout/farm.blend" id="1_cywmh"]
+[ext_resource type="PackedScene" uid="uid://cxqj3tyko8rj3" path="res://Art/models/blender/farm/wheat_field.blend" id="2_p64v5"]
+
+[node name="Farm" type="Node3D"]
+
+[node name="farm" parent="." instance=ExtResource("1_cywmh")]
+
+[node name="wheat_field" parent="." instance=ExtResource("2_p64v5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -5.75, 7)

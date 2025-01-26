@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdsf416bx1j8k"]
+
+[ext_resource type="PackedScene" uid="uid://gakmxef2ppw3" path="res://Art/models/blender/farm/tree_trunk.blend" id="1_0slpv"]
+[ext_resource type="PackedScene" uid="uid://b5rqq6ipoon5x" path="res://Art/models/blender/farm/leaves.blend" id="2_oa1cf"]
+
+[node name="Tree" type="Node3D"]
+
+[node name="tree_trunk" parent="." instance=ExtResource("1_0slpv")]
+
+[node name="leaves" parent="tree_trunk" instance=ExtResource("2_oa1cf")]
+transform = Transform3D(0.340205, -0.239284, 0.89398, 0.145017, 0.954489, 0.200294, -0.914017, 0.0623747, 0.364525, -2.8557, 5.47263, 1.03804)
+
+[node name="leaves2" parent="tree_trunk" instance=ExtResource("2_oa1cf")]
+transform = Transform3D(-0.274017, -0.424916, 0.962252, 0.00523345, 0.993802, 0.440339, -1.05188, 0.115636, -0.248478, 0.70203, 7.93742, 2.25009)
+
+[node name="leaves3" parent="tree_trunk" instance=ExtResource("2_oa1cf")]
+transform = Transform3D(-1.14852, 0.219012, -0.447694, 0.0422691, 1.16339, 0.460693, 0.496597, 0.407503, -1.07463, 1.06641, 6.68333, -3.84031)
+
+[node name="leaves4" parent="tree_trunk" instance=ExtResource("2_oa1cf")]
+transform = Transform3D(0.336993, 0.557318, 0.804919, -0.0107939, 0.853332, -0.58632, -0.978969, 0.182438, 0.283544, 5.21126, 5.00454, 2.2481)
+
+[node name="leaves5" parent="tree_trunk" instance=ExtResource("2_oa1cf")]
+transform = Transform3D(-0.26921, 0.741309, 0.670857, 0.744409, 0.612405, -0.377992, -0.667415, 0.384036, -0.692196, 3.75979, 2.53652, -1.70839)
+
+[node name="leaves6" parent="tree_trunk" instance=ExtResource("2_oa1cf")]
+transform = Transform3D(-0.498012, -0.292533, -0.843144, 0.349863, 0.824255, -0.49263, 0.821014, -0.528689, -0.301509, -2.31833, 2.59272, -2.92335)
