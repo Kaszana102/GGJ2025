@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://2xm37n2secyy"]
+[gd_scene load_steps=4 format=3 uid="uid://2xm37n2secyy"]
 
 [ext_resource type="Script" path="res://Code/UI/event_popup.gd" id="1_l4l25"]
+[ext_resource type="Texture2D" uid="uid://dr17nrh31yvjk" path="res://Art/ui textures/big-text-01.png" id="2_472pc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ku17"]
 
 [node name="EventUI" type="Control"]
 layout_mode = 3
@@ -16,18 +19,34 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -300.0
-offset_top = 144.835
-offset_right = 300.0
-offset_bottom = 428.835
+offset_left = -507.0
+offset_top = 145.0
+offset_right = 507.0
+offset_bottom = 595.0
 grow_horizontal = 2
 
 [node name="Title" type="Label" parent="Layout"]
 layout_mode = 2
 text = "WHAT TITLE"
 
-[node name="Description" type="Label" parent="Layout"]
-custom_minimum_size = Vector2(600, 0)
+[node name="DescriptionBackground" type="TextureRect" parent="Layout"]
 layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae lacinia mauris. Maecenas ac velit nulla. Donec id ante ac mauris tincidunt auctor. Nulla vitae tempor ligula, nec sagittis erat. Duis bibendum sapien a imperdiet gravida. Mauris nec massa sed erat interdum malesuada. Aenean eu venenatis enim, eget mollis erat. Etiam hendrerit viverra nisl, id egestas nunc dictum quis. Donec tempus pharetra faucibus. Aenean elementum eget dolor non convallis. Mauris luctus tempus egestas. Praesent imperdiet mi sem, at viverra leo malesuada id. Cras pulvinar maximus neque, a pellentesque lacus blandit eget. Quisque ultrices nisi tortor, nec ullamcorper eros condimentum eget. "
+texture = ExtResource("2_472pc")
+
+[node name="Description" type="Label" parent="Layout/DescriptionBackground"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -154.5
+offset_right = 329.0
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae lacinia mauris. Maecenas ac velit nulla. Donec id ante ac mauris tincidunt auctor. Nulla vitae tempor ligula, nec sagittis erat. Duis bibendum sapien a imperdiet gravida. Mauris nec massa sed erat interdum malesuada. Aenean eu venenatis enim, eget mollis erat. Etiam hendrerit viverra nisl, id egestas nunc dictum quis."
+label_settings = SubResource("LabelSettings_3ku17")
 autowrap_mode = 3

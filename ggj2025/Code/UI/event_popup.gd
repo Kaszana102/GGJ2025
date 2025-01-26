@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func setup(event_data: GameEvent):
 	$Layout/Title.text = event_data.title
-	$Layout/Description.text = event_data.description
+	$Layout/DescriptionBackground/Description.text = event_data.description
 	for i in range(event_data.choices.size()) :
 		var button: EventChoiceButton = preload("res://Prefabs/UI/choice_button.tscn").instantiate().with_data(event_data,i) as EventChoiceButton
 		$Layout.add_child(button)

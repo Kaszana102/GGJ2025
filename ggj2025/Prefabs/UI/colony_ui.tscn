@@ -4,12 +4,12 @@
 [ext_resource type="Script" path="res://Code/UI/resource_display.gd" id="1_t6ejh"]
 [ext_resource type="Script" path="res://Code/UI/build_structure_button.gd" id="2_6hutb"]
 [ext_resource type="Script" path="res://Code/UI/blackoutUI.gd" id="2_p513n"]
-[ext_resource type="PackedScene" uid="uid://435fcue1bac7" path="res://Prefabs/Structures/Ghosts/coal_mine_ghost.tscn" id="4_o02jt"]
+[ext_resource type="PackedScene" path="res://Prefabs/Structures/Ghosts/coal_mine_ghost.tscn" id="4_o02jt"]
 [ext_resource type="PackedScene" uid="uid://t7y67sueah6u" path="res://Prefabs/Structures/Ghosts/city_ghost.tscn" id="4_pnpm5"]
-[ext_resource type="PackedScene" uid="uid://c6hej5vu88au1" path="res://Prefabs/Structures/Ghosts/farm_ghost.tscn" id="6_1njcm"]
-[ext_resource type="PackedScene" uid="uid://23trqxb2pdny" path="res://Prefabs/Structures/Ghosts/generator_ghost.tscn" id="7_rplwf"]
-[ext_resource type="PackedScene" uid="uid://bftovcosquba4" path="res://Prefabs/Structures/Ghosts/iron_mine_ghost.tscn" id="8_v37mu"]
-[ext_resource type="PackedScene" uid="uid://cnxqlfqslkxoh" path="res://Prefabs/Structures/Ghosts/terraformation_ghost.tscn" id="9_ysd1l"]
+[ext_resource type="PackedScene" path="res://Prefabs/Structures/Ghosts/farm_ghost.tscn" id="6_1njcm"]
+[ext_resource type="PackedScene" path="res://Prefabs/Structures/Ghosts/generator_ghost.tscn" id="7_rplwf"]
+[ext_resource type="PackedScene" path="res://Prefabs/Structures/Ghosts/iron_mine_ghost.tscn" id="8_v37mu"]
+[ext_resource type="PackedScene" path="res://Prefabs/Structures/Ghosts/terraformation_ghost.tscn" id="9_ysd1l"]
 
 [node name="ColonyUi" type="Node3D"]
 script = ExtResource("1_jkll5")
