@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://btnrbkcwu7j5i"]
+[gd_scene load_steps=4 format=3 uid="uid://btnrbkcwu7j5i"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_xoteh"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_3446g"]
+[ext_resource type="PackedScene" uid="uid://cj70pwb8wnu5b" path="res://Prefabs/Environment/Mine/mine.tscn" id="2_3dirg"]
+[ext_resource type="PackedScene" uid="uid://jr61um636drb" path="res://Prefabs/Environment/Dome/dome.tscn" id="3_7hjoa"]
 
 [node name="IronMine" type="Node3D"]
 script = ExtResource("1_xoteh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PrismMesh_3446g")
+[node name="Mine" parent="." instance=ExtResource("2_3dirg")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0.205312, 0)
+
+[node name="Dome" parent="." instance=ExtResource("3_7hjoa")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
