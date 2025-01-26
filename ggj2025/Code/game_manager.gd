@@ -18,6 +18,7 @@ var _blackout : bool = false
 var frame_duration : float = 0.1
 
 var state: GameState = GameState.PLAYING
+var blackout_audio_source: AudioStreamPlayer
 
 func _init() -> void:
 	for type in Resources.type.values():
@@ -27,6 +28,9 @@ func _init() -> void:
 			resources[type] = 0
 	for type in Ore.type.values():
 		ore_deposits[type] = []
+	blackout_audio_source = AudioStreamPlayer.new()
+	add_child(blackout_audio_source)
+	blackout_audio_source.stream = load("res://Art/audio/blackout.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -73,6 +77,7 @@ func calc_energy() -> float:
 func _start_blackout():
 	print("BLACKOUT")
 	_blackout = true
+	blackout_audio_source.play()
 
 func _produce(delta: float):
 	for city in cities:
@@ -112,6 +117,8 @@ func update_ui():
 	pass
 
 func can_place_structure(ghost_pos: Vector3, min_radius:float, max_radius:float)->bool:
+	if len(cities) == 0:
+		return true
 	for city in cities:
 		var distance := city.position.distance_to(ghost_pos)
 		if   min_radius <= distance and distance <=  max_radius:
@@ -126,6 +133,8 @@ func outside_min_range(ghost_pos: Vector3, min_radius:float)->bool:
 	return true
 
 func in_city_max_range(ghost_pos: Vector3, max_radius:float)->bool:
+	if len(cities) == 0:
+		return true
 	for city in cities:
 		var distance := city.position.distance_to(ghost_pos)
 		if  distance <=  max_radius:
