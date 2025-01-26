@@ -6,8 +6,6 @@
 [node name="BlackoutTest" type="Node3D"]
 
 [node name="Generator" parent="." instance=ExtResource("2_twosf")]
-produced_resource_amount = 1.0
-production_requirement = null
 
 [node name="Farm" parent="." instance=ExtResource("2_qg3ad")]
 

@@ -7,7 +7,7 @@ enum GameState {PLAYING,FAILED, WIN}
 ## Key: [Resources.type]
 ## Value: float
 var resources : Dictionary= {} 
-
+var production_bonuses:= PerResourceStats.new()
 var cities: Array[City]
 ## dictionary of available ore deposits on the map
 ## key: ore type
@@ -83,7 +83,8 @@ func _produce(delta: float):
 	for city in cities:
 		if city.active:
 			city.produce(delta)
-	
+	for production : Resources.type in production_bonuses.resources:
+		add_resource(production, production_bonuses.resources[production])
 
 ## get resources from the game manager
 ## returns true if succesful
@@ -102,6 +103,15 @@ func has_resource(type: Resources.type, amount: float) -> bool:
 
 func add_resource(type: Resources.type, amount: float) -> void:
 	resources[type] = resources.get(type) + amount
+
+func subtract_resource(type: Resources.type, amount: float) -> void:
+	resources[type] = resources.get(type) + amount
+
+func add_production_bonus(type: Resources.type, amount: float) -> void:
+	production_bonuses.resources[type] += amount
+	
+func subtract_production_bonus(type: Resources.type, amount: float) -> void:
+	production_bonuses.resources[type] -= amount
 
 func update_ui():
 	pass

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="5_0tr3g"]
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="5_pny3v"]
 [ext_resource type="PackedScene" uid="uid://b8hubehg3ensk" path="res://Prefabs/Ore/coal_ore.tscn" id="7_g7mb2"]
-[ext_resource type="PackedScene" path="res://Prefabs/Structures/city.tscn" id="8_fowyc"]
+[ext_resource type="PackedScene" uid="uid://ox43wbdvjq10" path="res://Prefabs/Structures/city.tscn" id="8_fowyc"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="9_ts0xk"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_s1rcb"]
 

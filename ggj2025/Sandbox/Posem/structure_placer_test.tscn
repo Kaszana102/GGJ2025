@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ds7gjmr1x6pkg"]
+[gd_scene load_steps=8 format=3 uid="uid://ds7gjmr1x6pkg"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="1_nciwg"]
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_wg3im"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_frg55"]
-[ext_resource type="PackedScene" uid="uid://dnrlyjun6im18" path="res://Prefabs/Structures/test_structure_ghost.tscn" id="3_dmhis"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="4_gyu70"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
@@ -48,7 +47,6 @@ script = ExtResource("1_wg3im")
 [node name="TestUI" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_structure_placer")]
 script = ExtResource("2_frg55")
 _structure_placer = NodePath("../StructurePlacer")
-_structure_ghost_prefab = ExtResource("3_dmhis")
 
 [node name="StructurePlacer" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_camera")]
 script = ExtResource("4_gyu70")
