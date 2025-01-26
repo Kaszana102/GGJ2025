@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_8smuu"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="2_c248a"]
+[ext_resource type="PackedScene" uid="uid://cj70pwb8wnu5b" path="res://Prefabs/Environment/Mine/mine.tscn" id="2_m5owr"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="3_qq04f"]
 
 [sub_resource type="Resource" id="Resource_d4vxb"]
@@ -13,11 +14,9 @@ amount = 10.0
 script = ExtResource("3_qq04f")
 products = Array[ExtResource("2_c248a")]([SubResource("Resource_d4vxb")])
 
-[sub_resource type="PrismMesh" id="PrismMesh_ty5jj"]
-
 [node name="CoalMine" type="Node3D"]
 script = ExtResource("1_8smuu")
 production = SubResource("Resource_7id64")
 
 [node name="Mine" parent="." instance=ExtResource("2_m5owr")]
-transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0.32, 0)
