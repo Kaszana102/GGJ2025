@@ -101,6 +101,12 @@ func has_resource(type: Resources.type, amount: float) -> bool:
 		return true
 	return false
 
+func can_afford(reqs: Array[Production])-> bool:
+	for req in reqs:
+		if resources.get(req.type) < req.amount:
+			return false
+	return true
+
 func add_resource(type: Resources.type, amount: float) -> void:
 	resources[type] = resources.get(type) + amount
 
@@ -141,10 +147,10 @@ func in_city_max_range(ghost_pos: Vector3, max_radius:float)->bool:
 			return true
 	return false
 
-func is_point_on_ore(point:Vector3, ore_type: Ore.type)->bool:
+func is_point_on_ore(point:Vector3, ore_type: Ore.type, dist: float)->bool:
 	for deposit in ore_deposits.get(ore_type):
 		var distance = deposit.position.distance_to(point) 
-		if distance <= 1:
+		if distance <= dist:
 			return true
 	return false
 

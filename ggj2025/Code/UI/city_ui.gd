@@ -5,6 +5,9 @@ extends Node3D
 signal toggle_power
 signal build_farm
 signal build_generator
+signal build_coal
+signal build_iron
+signal build_terraform
 
 var finest_italian_pasta : bool = false  # spaghetti
 
@@ -27,6 +30,15 @@ func _toggle_power() -> void:
 func _build_farm():
 	build_farm.emit()
 
+func _build_coal():
+	build_coal.emit()
+	
+func _build_iron():
+	build_iron.emit()
+	
+func _build_terraform():
+	build_terraform.emit()
+
 func _build_generator():
 	build_generator.emit()
 
@@ -40,3 +52,7 @@ func _process(delta: float) -> void:
 			_hide_node()
 	else:
 		finest_italian_pasta = true
+
+
+func _on_clickable_object_3d_clicked() -> void:
+	pass # Replace with function body.

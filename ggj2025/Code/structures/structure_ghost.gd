@@ -50,14 +50,14 @@ func can_place() -> bool:
 	var can := true
 	can = can and _far_enough_from_city()
 	can = can and _close_enough_from_city()
-	can = can and _close_enough_from_ore()
+	#can = can and _close_enough_from_ore()
 	for resource_cost in place_cost:
 		if not GameManager.has_resource(resource_cost.type, resource_cost.amount):
 			can = false
 			break
 			
-	if needed_deposit_ore != null:
-		can = can and _close_enough_from_ore()
+	#if needed_deposit_ore != null:
+		#can = can and _close_enough_from_ore()
 	return can
 
 
@@ -87,20 +87,20 @@ func _close_enough_from_city()->bool :
 	max_radius_was = close_enough
 	return close_enough
 	
-func _close_enough_from_ore()->bool :
-	if needed_deposit_ore != null:
-		var close_enough = GameManager.is_point_on_ore(position, needed_deposit_ore.type)
-		if close_enough and !max_radius_ore_was:
-			#hide circle			
-			max_radius_ore_circle.visible=false
-			pass 
-		if !close_enough and max_radius_ore_was:
-			# show circle			
-			max_radius_ore_circle.visible=true
-			pass
-		max_radius_ore_was = close_enough
-		return close_enough
-	return true
+#func _close_enough_from_ore()->bool :
+	#if needed_deposit_ore != null:
+		#var close_enough = GameManager.is_point_on_ore(position, needed_deposit_ore.type)
+		#if close_enough and !max_radius_ore_was:
+			##hide circle			
+			#max_radius_ore_circle.visible=false
+			#pass 
+		#if !close_enough and max_radius_ore_was:
+			## show circle			
+			#max_radius_ore_circle.visible=true
+			#pass
+		#max_radius_ore_was = close_enough
+		#return close_enough
+	#return true
 
 func place() -> City:
 	if not can_place():
