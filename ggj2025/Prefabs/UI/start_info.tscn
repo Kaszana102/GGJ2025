@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://xo4ddymu6n1k"]
+
+[ext_resource type="Script" path="res://Code/UI/delete_self.gd" id="1_o248b"]
+
+[node name="StartInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o248b")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.5
+offset_top = -68.0
+offset_right = 215.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Chief!
+You need to save the planet from the incoming danger!
+Terrform the planet in this harsh environment and save
+the humanity!"
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "close"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="delete_self"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://clwghx1g1npbk"]
+[gd_scene load_steps=19 format=3 uid="uid://clwghx1g1npbk"]
 
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="1_agxwj"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="1_r0ne8"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Structures/city.tscn" id="8_iw6m8"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="9_l7d7i"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_us316"]
+[ext_resource type="PackedScene" uid="uid://xo4ddymu6n1k" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8hipj"]
 
@@ -82,3 +83,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("5_16hx2")
 energy_consumption = 0.0
 production = SubResource("Resource_m4uml")
+
+[node name="StartInfo" parent="." instance=ExtResource("11_ohs0w")]
