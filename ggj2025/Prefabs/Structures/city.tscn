@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbdvd24cnr7co"]
+[gd_scene load_steps=8 format=3 uid="uid://dyd7sto07crqg"]
 
 [ext_resource type="Script" path="res://Code/structures/city.gd" id="1_c3aw6"]
 [ext_resource type="Script" path="res://Code/UI/clickable_object_3d.gd" id="2_rqfio"]
-[ext_resource type="PackedScene" uid="uid://cd61h0nt3tsn7" path="res://Prefabs/UI/city_ui.tscn" id="3_dokq5"]
+[ext_resource type="PackedScene" uid="uid://bc1nv7mrt8tfx" path="res://Prefabs/UI/city_ui.tscn" id="3_dokq5"]
 [ext_resource type="PackedScene" uid="uid://b6d8jik3c5ix4" path="res://Art/models/blender/city/city_layout.glb" id="4_5crcy"]
 [ext_resource type="PackedScene" uid="uid://jr61um636drb" path="res://Prefabs/Environment/Dome/dome.tscn" id="5_fbum4"]
 

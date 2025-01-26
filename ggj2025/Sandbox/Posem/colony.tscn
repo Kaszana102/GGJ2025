@@ -153,6 +153,7 @@ visible = false
 mesh = SubResource("BoxMesh_40wgi")
 
 [node name="City" parent="." instance=ExtResource("7_0rvtn")]
+extension_place_distance = 1.5
 
 [node name="Structure" type="Node3D" parent="City"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
