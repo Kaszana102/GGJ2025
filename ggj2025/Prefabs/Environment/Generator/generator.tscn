@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://6xqmctjavrdi"]
+
+[ext_resource type="PackedScene" uid="uid://di0xhq4338hbe" path="res://Art/models/blender/power_plant/cooling_tower.blend" id="1_fy3qw"]
+[ext_resource type="PackedScene" uid="uid://cvrusluvplv8t" path="res://Art/models/blender/power_plant/power_line.blend" id="2_lc3la"]
+[ext_resource type="PackedScene" uid="uid://dd2nkmqntovqj" path="res://Art/models/blender/power_plant/converter.blend" id="3_c06hp"]
+[ext_resource type="PackedScene" uid="uid://biub2tbb0gubn" path="res://Art/models/blender/power_plant/generator.blend" id="4_pu7vb"]
+
+[node name="Generator" type="Node3D"]
+
+[node name="cooling_tower" parent="." instance=ExtResource("1_fy3qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.998425, 0)
+
+[node name="cooling_tower2" parent="." instance=ExtResource("1_fy3qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4518, -0.992843, 0)
+
+[node name="power_line" parent="." instance=ExtResource("2_lc3la")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.258854, -1.61078, -0.380521)
+
+[node name="converter" parent="." instance=ExtResource("3_c06hp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0869, 2.38691, 5.60906)
+
+[node name="converter2" parent="." instance=ExtResource("3_c06hp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.06347, 2.44748, 21.4274)
+
+[node name="converter3" parent="." instance=ExtResource("3_c06hp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.7275, 2.44674, 15.806)
+
+[node name="generator" parent="." instance=ExtResource("4_pu7vb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.69807, -2.81206, 15.6149)
+
+[node name="generator3" parent="." instance=ExtResource("4_pu7vb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.0584, -2.81206, 9.82046)
+
+[node name="generator2" parent="." instance=ExtResource("4_pu7vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15418, -2.81206, 6.21707)

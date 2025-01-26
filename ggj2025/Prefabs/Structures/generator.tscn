@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_2c7x1"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="2_mrv3c"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="4_lkfpm"]
+[ext_resource type="PackedScene" uid="uid://6xqmctjavrdi" path="res://Prefabs/Environment/Generator/generator.tscn" id="5_it2px"]
 
 [sub_resource type="Resource" id="Resource_k1iiq"]
 script = ExtResource("2_mrv3c")
@@ -20,11 +21,9 @@ script = ExtResource("4_lkfpm")
 products = Array[ExtResource("2_mrv3c")]([SubResource("Resource_k1iiq")])
 requirement = SubResource("Resource_hr0wr")
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_hwu7r"]
-
 [node name="Generator" type="Node3D"]
 script = ExtResource("1_bkumi")
 production = SubResource("Resource_wf53a")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_hwu7r")
+[node name="Generator" parent="." instance=ExtResource("5_it2px")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.311465, 0)
