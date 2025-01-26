@@ -44,3 +44,8 @@ func energy_influcce():
 		return production.produced_energy()
 	else:
 		return 0  # TODO awful fix
+		
+func set_active(state: bool):
+	for child in get_children():
+		if child.has_method("set_active"):
+			child.set_active(state)

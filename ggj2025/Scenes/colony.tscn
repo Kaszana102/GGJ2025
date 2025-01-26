@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://clwghx1g1npbk"]
+[gd_scene load_steps=24 format=3 uid="uid://clwghx1g1npbk"]
 
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="1_agxwj"]
+[ext_resource type="Script" path="res://Code/Events/EventManager.gd" id="1_av1yu"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="1_r0ne8"]
 [ext_resource type="Texture2D" uid="uid://yw8t7p6spcc" path="res://Art/textures/environment/environment.png" id="1_rcylo"]
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="2_c6cm5"]
@@ -46,6 +47,9 @@ script = ExtResource("10_us316")
 products = Array[ExtResource("9_l7d7i")]([SubResource("Resource_bi4vb"), SubResource("Resource_vidl6"), SubResource("Resource_0gba1")])
 
 [node name="Colony" type="Node3D"]
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource("1_av1yu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 1.50607, 0, 0)

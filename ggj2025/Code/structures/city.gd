@@ -21,8 +21,16 @@ func set_active(state: bool):
 	active = state # TODO add logic to it
 	print("active: ", state)
 	
+	for child in get_children():
+		if child.has_method("set_active"):
+			child.set_active(state)
+	
+	for structure in structures:
+		structure.set_active(state)
+	
 func toggle_active():
 	set_active(not active)
+	
 	
 func place_extension(prefab: PackedScene) -> void:
 	if len(structures) == max_structures:
