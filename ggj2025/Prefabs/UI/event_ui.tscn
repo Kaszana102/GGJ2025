@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://2xm37n2secyy"]
+[gd_scene load_steps=6 format=3 uid="uid://2xm37n2secyy"]
 
 [ext_resource type="Script" path="res://Code/UI/event_popup.gd" id="1_l4l25"]
 [ext_resource type="Texture2D" uid="uid://dr17nrh31yvjk" path="res://Art/ui textures/big-text-01.png" id="2_472pc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_3ku17"]
+[ext_resource type="Texture2D" uid="uid://bwjcdu3dkdxfl" path="res://Art/ui textures/small-text.png" id="2_n4jc0"]
+[ext_resource type="LabelSettings" uid="uid://cef8ps7hirloo" path="res://Prefabs/UI/event_title_font.tres" id="3_72q0j"]
+[ext_resource type="LabelSettings" uid="uid://bt7jlq3c7q2nl" path="res://Prefabs/UI/default_font.tres" id="5_g2ko2"]
 
 [node name="EventUI" type="Control"]
 layout_mode = 3
@@ -25,13 +26,24 @@ offset_right = 507.0
 offset_bottom = 595.0
 grow_horizontal = 2
 
-[node name="Title" type="Label" parent="Layout"]
+[node name="TitleBackground" type="TextureRect" parent="Layout"]
 layout_mode = 2
+texture = ExtResource("2_n4jc0")
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="Layout/TitleBackground"]
+layout_mode = 2
+offset_left = 82.0
+offset_top = 26.0
+offset_right = 432.0
+offset_bottom = 73.0
 text = "WHAT TITLE"
+label_settings = ExtResource("3_72q0j")
 
 [node name="DescriptionBackground" type="TextureRect" parent="Layout"]
 layout_mode = 2
 texture = ExtResource("2_472pc")
+stretch_mode = 4
 
 [node name="Description" type="Label" parent="Layout/DescriptionBackground"]
 custom_minimum_size = Vector2(600, 0)
@@ -41,12 +53,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -416.0
-offset_top = -154.5
-offset_right = 329.0
-offset_bottom = 107.5
+offset_left = -376.0
+offset_top = -150.5
+offset_right = 461.0
+offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae lacinia mauris. Maecenas ac velit nulla. Donec id ante ac mauris tincidunt auctor. Nulla vitae tempor ligula, nec sagittis erat. Duis bibendum sapien a imperdiet gravida. Mauris nec massa sed erat interdum malesuada. Aenean eu venenatis enim, eget mollis erat. Etiam hendrerit viverra nisl, id egestas nunc dictum quis."
-label_settings = SubResource("LabelSettings_3ku17")
+text = "		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae lacinia mauris. Maecenas ac velit nulla. Donec id ante ac mauris tincidunt auctor. Nulla vitae tempor ligula, nec sagittis erat. Duis bibendum sapien a imperdiet gravida. Mauris nec massa sed erat interdum malesuada. "
+label_settings = ExtResource("5_g2ko2")
 autowrap_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="Layout"]
+layout_mode = 2
+columns = 2
