@@ -15,4 +15,4 @@ func set_type(type: Resources.type):
 	$Icon.set_variant(type)
 
 func set_amount_text(amount: float, text: String):
-	$Count.text = text + String.num(amount)
+	$Count.text = text + String.num(amount).pad_decimals(1)

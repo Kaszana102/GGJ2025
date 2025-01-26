@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8faa4c4wylyk"]
+
+[ext_resource type="Texture2D" uid="uid://b7044s6sgnd42" path="res://Art/ui textures/icon-with-two-labels.png" id="1_2rppc"]
+[ext_resource type="Script" path="res://Code/UI/total_resource_stat.gd" id="1_ufpdk"]
+[ext_resource type="LabelSettings" uid="uid://c6php7mdh4lh0" path="res://Prefabs/UI/resource_icon_font.tres" id="3_die3r"]
+[ext_resource type="PackedScene" uid="uid://2qf20hbvp7fa" path="res://Prefabs/UI/resource_icon.tscn" id="3_rfhmf"]
+[ext_resource type="LabelSettings" uid="uid://mdibv8iglkh0" path="res://Prefabs/UI/event_button_font.tres" id="4_eqq0p"]
+
+[node name="TotalResourceStat" type="BoxContainer"]
+script = ExtResource("1_ufpdk")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_2rppc")
+
+[node name="Icon" parent="Background" instance=ExtResource("3_rfhmf")]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 85.0
+offset_bottom = 79.0
+
+[node name="Production" type="Label" parent="Background"]
+layout_mode = 2
+offset_left = 109.0
+offset_top = 78.0
+offset_right = 174.0
+offset_bottom = 94.0
+text = "+10.1"
+label_settings = ExtResource("3_die3r")
+horizontal_alignment = 1
+
+[node name="Total" type="Label" parent="Background"]
+layout_mode = 2
+offset_left = 110.0
+offset_top = 44.0
+offset_right = 191.0
+offset_bottom = 67.0
+text = "100"
+label_settings = ExtResource("4_eqq0p")
+horizontal_alignment = 1
