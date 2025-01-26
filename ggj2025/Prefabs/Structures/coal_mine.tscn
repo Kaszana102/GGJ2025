@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjkannkc13ctp"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_8smuu"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_ty5jj"]
+[ext_resource type="PackedScene" uid="uid://cj70pwb8wnu5b" path="res://Prefabs/Environment/Mine/mine.tscn" id="2_m5owr"]
 
 [node name="CoalMine" type="Node3D"]
 script = ExtResource("1_8smuu")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PrismMesh_ty5jj")
+[node name="Mine" parent="." instance=ExtResource("2_m5owr")]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
