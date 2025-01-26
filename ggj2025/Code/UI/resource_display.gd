@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	resources = GameManager.resources.duplicate(true)
 	for resource in resources:
 		var resource_production = 0
+		resource_production += GameManager.production_bonuses.resources[resource]
 		for city in GameManager.cities:
 			if resource == Resources.type.ENERGY:
 				resource_production -= city.calc_energy()

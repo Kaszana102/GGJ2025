@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="GameEvent" load_steps=9 format=3 uid="uid://b2e7caxe7js8e"]
+
+[ext_resource type="Script" path="res://Code/Events/event_choice.gd" id="1_dqsk2"]
+[ext_resource type="Script" path="res://Code/Events/effects.gd" id="2_mi508"]
+[ext_resource type="Script" path="res://Code/Events/event.gd" id="3_4om3g"]
+
+[sub_resource type="Resource" id="Resource_7tno0"]
+script = ExtResource("2_mi508")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 2
+}
+cost = {
+0: 0,
+1: 100,
+2: 0,
+3: 0,
+4: 0
+}
+bonus = {
+0: 0,
+1: 0,
+2: 0,
+3: 200,
+4: 0
+}
+
+[sub_resource type="Resource" id="Resource_ven0i"]
+script = ExtResource("1_dqsk2")
+description = "Our food stockpiles are running low"
+effects = SubResource("Resource_7tno0")
+
+[sub_resource type="Resource" id="Resource_eydd7"]
+script = ExtResource("2_mi508")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: -4
+}
+cost = {
+0: 0,
+1: 200,
+2: 0,
+3: 0,
+4: 0
+}
+bonus = {
+0: 300,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+
+[sub_resource type="Resource" id="Resource_rymy5"]
+script = ExtResource("1_dqsk2")
+description = "We need some coal"
+effects = SubResource("Resource_eydd7")
+
+[sub_resource type="Resource" id="Resource_leqmx"]
+script = ExtResource("1_dqsk2")
+description = "No thanks."
+
+[resource]
+script = ExtResource("3_4om3g")
+title = "Research investment"
+description = "You're approached by a group of scientists. They offer to help you gain some resources at a small cost. What will you choose?"
+choices = Array[ExtResource("1_dqsk2")]([SubResource("Resource_ven0i"), SubResource("Resource_rymy5"), SubResource("Resource_leqmx")])

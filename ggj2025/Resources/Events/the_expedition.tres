@@ -1,0 +1,98 @@
+[gd_resource type="Resource" script_class="GameEvent" load_steps=10 format=3 uid="uid://ba2bygk5rad43"]
+
+[ext_resource type="Script" path="res://Code/Events/event_choice.gd" id="1_gfsuh"]
+[ext_resource type="Script" path="res://Code/Events/effects.gd" id="2_x8wqr"]
+[ext_resource type="Script" path="res://Code/Events/event.gd" id="3_r167e"]
+
+[sub_resource type="Resource" id="Resource_hq4a3"]
+script = ExtResource("2_x8wqr")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+cost = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+bonus = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+
+[sub_resource type="Resource" id="Resource_54ljq"]
+script = ExtResource("1_gfsuh")
+description = "We can't do anything"
+effects = SubResource("Resource_hq4a3")
+
+[sub_resource type="Resource" id="Resource_awbfh"]
+script = ExtResource("2_x8wqr")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+cost = {
+0: 0,
+1: 0,
+2: 0,
+3: 400,
+4: 0
+}
+bonus = {
+0: 50,
+1: 0,
+2: 30,
+3: 700,
+4: 0
+}
+
+[sub_resource type="Resource" id="Resource_37yt1"]
+script = ExtResource("1_gfsuh")
+description = "We'll send a large expedition"
+effects = SubResource("Resource_awbfh")
+
+[sub_resource type="Resource" id="Resource_1vby0"]
+script = ExtResource("2_x8wqr")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+cost = {
+0: 0,
+1: 0,
+2: 0,
+3: 200,
+4: 0
+}
+bonus = {
+0: 0,
+1: 0,
+2: 0,
+3: 300,
+4: 0
+}
+
+[sub_resource type="Resource" id="Resource_38ykl"]
+script = ExtResource("1_gfsuh")
+description = "We'll send a regular expedition"
+effects = SubResource("Resource_1vby0")
+
+[resource]
+script = ExtResource("3_r167e")
+title = "The expedition"
+description = "You have an opportunity to send out an expedition to gather more food. Allocating more resources will increase the chances of finding more food and potentially finding other usefull things. What will you do?"
+choices = Array[ExtResource("1_gfsuh")]([SubResource("Resource_54ljq"), SubResource("Resource_37yt1"), SubResource("Resource_38ykl")])

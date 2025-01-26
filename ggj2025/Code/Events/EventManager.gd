@@ -28,7 +28,8 @@ func _ready() -> void:
 	# Set up event timer
 	timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 1.0 # wait time in seconds
+	timer.wait_time = randf_range(min_time_between_events, max_time_between_events)
+	timer.wait_time = 50.0
 	timer.one_shot = true
 	timer.start()
 	timer.connect("timeout", _on_timer_timeout.bind())
@@ -49,7 +50,8 @@ func consume_event() -> void:
 		events.remove_at(events.find(queued_event))
 	remove_child(popup)
 	popup.queue_free()
-	timer.start()
+	if(events.size()>0):
+		timer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

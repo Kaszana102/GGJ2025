@@ -1,0 +1,69 @@
+[gd_resource type="Resource" script_class="GameEvent" load_steps=8 format=3 uid="uid://b1mi5psgv3efy"]
+
+[ext_resource type="Script" path="res://Code/Events/event_choice.gd" id="1_50gd0"]
+[ext_resource type="Script" path="res://Code/Events/effects.gd" id="2_e8hqu"]
+[ext_resource type="Script" path="res://Code/Events/event.gd" id="3_0ptid"]
+
+[sub_resource type="Resource" id="Resource_8huie"]
+script = ExtResource("2_e8hqu")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+cost = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+bonus = {
+0: 0,
+1: 0,
+2: 0,
+3: 100,
+4: 10
+}
+
+[sub_resource type="Resource" id="Resource_dldrw"]
+script = ExtResource("1_50gd0")
+description = "Always dreamt of owning pipes"
+effects = SubResource("Resource_8huie")
+
+[sub_resource type="Resource" id="Resource_eub1t"]
+script = ExtResource("2_e8hqu")
+production = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+cost = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0
+}
+bonus = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 30
+}
+
+[sub_resource type="Resource" id="Resource_r5axk"]
+script = ExtResource("1_50gd0")
+description = "Sorry uncle, another time"
+effects = SubResource("Resource_eub1t")
+
+[resource]
+script = ExtResource("3_0ptid")
+title = "Uncle Jack"
+description = "Hey kiddo! Long time no see, ey? My pipe business has been doing really great lately. Want some? "
+choices = Array[ExtResource("1_50gd0")]([SubResource("Resource_dldrw"), SubResource("Resource_r5axk")])
