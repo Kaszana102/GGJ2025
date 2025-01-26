@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="ProductionBalance" load_steps=4 format=3 uid="uid://cyx0rb733ukal"]
-
-[ext_resource type="Script" path="res://Code/structures/production.gd" id="1_sxndb"]
-[ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="2_2rtrw"]
-[ext_resource type="Resource" uid="uid://cc8kyld4n8ulj" path="res://Productions/Production1.tres" id="2_gn1wl"]
-
-[resource]
-script = ExtResource("2_2rtrw")
-products = Array[ExtResource("1_sxndb")]([ExtResource("2_gn1wl")])
