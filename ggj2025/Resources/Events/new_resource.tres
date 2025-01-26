@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="GameEvent" load_steps=10 format=3 uid="uid://b2e7caxe7js8e"]
+[gd_resource type="Resource" script_class="GameEvent" load_steps=10 format=3 uid="uid://cavxxlh7b8dtu"]
 
 [ext_resource type="Script" path="res://Code/Events/event_choice.gd" id="1_dqsk2"]
 [ext_resource type="Script" path="res://Code/Events/effects.gd" id="2_mi508"]

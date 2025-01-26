@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://xo4ddymu6n1k"]
+[gd_scene load_steps=2 format=3 uid="uid://dorac0p5a8r0t"]
 
 [ext_resource type="Script" path="res://Code/UI/delete_self.gd" id="1_o248b"]
 
@@ -34,8 +34,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Chief!
 You need to save the planet from the incoming danger!
-Terrform the planet in this harsh environment and save
-the humanity!"
+Terraform the planet in this harsh environment and save humanity!"
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2

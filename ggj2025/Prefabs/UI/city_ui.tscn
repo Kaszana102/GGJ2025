@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc1nv7mrt8tfx"]
+[gd_scene load_steps=11 format=3 uid="uid://cd61h0nt3tsn7"]
 
 [ext_resource type="Script" path="res://Code/UI/billboard.gd" id="1_cbqea"]
 [ext_resource type="Script" path="res://Code/UI/city_ui.gd" id="1_wa5o0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Code/UI/clickable_object_3d.gd" id="3_sm02w"]
 [ext_resource type="Texture2D" uid="uid://ptpiyil8ymd7" path="res://Art/icons/farm_s.png" id="5_1l0je"]
 [ext_resource type="Texture2D" uid="uid://cmc4x01bffpgs" path="res://Art/icons/coal_small.png" id="6_qu6vx"]
+[ext_resource type="Texture2D" uid="uid://d3i1pea3lfvyd" path="res://Art/icons/power_plant_s.png" id="6_sq1gv"]
 [ext_resource type="Texture2D" uid="uid://c16dpmcw4yjtt" path="res://Art/icons/iron_s.png" id="8_lnpga"]
 [ext_resource type="Texture2D" uid="uid://dikxfd47e76pq" path="res://Art/icons/terraform_s.png" id="9_olqs4"]
 
@@ -43,7 +44,7 @@ shape = SubResource("BoxShape3D_5rjsa")
 [node name="BuildGenerator" type="Sprite3D" parent="Billboard"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24063, 0.311257, 0)
 no_depth_test = true
-texture = ExtResource("6_qu6vx")
+texture = ExtResource("6_sq1gv")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildGenerator"]
 script = ExtResource("3_sm02w")

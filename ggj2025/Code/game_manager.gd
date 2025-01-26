@@ -57,7 +57,7 @@ func _fixed_process() -> void:
 		if resources.get(Resources.type.TERRAFORMATION )<= 0:
 			state = GameState.FAILED
 			fail_game()
-		if resources.get(Resources.type.TERRAFORMATION) >= 1000:
+		if resources.get(Resources.type.TERRAFORMATION) >= 10000:
 			state = GameState.WIN
 			win_game()
 	

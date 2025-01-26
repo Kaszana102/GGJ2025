@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuy4vjgjp7vib"]
+[gd_scene load_steps=2 format=3 uid="uid://djrrrs7m1xj2x"]
 
 [ext_resource type="Script" path="res://Code/scene_manager.gd" id="1_r6v24"]
 
@@ -26,7 +26,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Congratulations!
-You've save the planet!"
+You've saved the planet!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
