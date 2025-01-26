@@ -2,11 +2,12 @@ class_name ProductionBalance
 
 extends Resource
  
-@export var products : Array[Production]
+@export var products : Array[Production] = []
 @export var requirement : ResourceRequirement
 
-func produces_energy()->bool:
+## not calucalting time frame
+func produced_energy()->float:
 	for prod in products:
 		if prod.type == Resources.type.ENERGY:
-			return true
-	return false
+			return prod.amount
+	return 0

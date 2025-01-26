@@ -5,33 +5,20 @@ extends Node3D
 
 ## energy consumption per second
 @export var energy_consumption : float  = 1
-@export var active : bool = true
 
-@export var production: ProductionBalance = ProductionBalance.new()
+@export var production: ProductionBalance
 
 var ore_deposit: Ore
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if production.produces_energy():
-		GameManager.add_generator(self)
-	else:
-		GameManager.add_structure(self)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if(active):
-		pass
-
-func set_active(state: bool):
-	active = state
+	var city: City = get_parent()
+	city.add_structure(self)
 
 ## produces resource in given delta time
 ## doesn consume energy, as it is calculated in gamemanager already
-func produce(delta: float):
+func produce(delta: float) -> Array[Production]:
 	if production.products.size() == 0:
-		return 0
+		return []
 	var percentage = 1 # 100%
 	
 	if production.requirement != null:
@@ -41,10 +28,14 @@ func produce(delta: float):
 		))
 		percentage = taken_amount/(production.requirement.amount * delta)
 	
-	for product in production.products:		
+	var products:Array[Production] = []
+	for product in production.products:
 		var produced_amount = product.amount * percentage * delta
-		GameManager.add_resource(
-			product.type,
-			produced_amount
-		)	
+		products.append(Production.construct(product.type,
+			produced_amount))
+	return products
 	
+## positive meanit adds energy
+## not taking time into account
+func energy_influcce():
+	return production.produced_energy()
