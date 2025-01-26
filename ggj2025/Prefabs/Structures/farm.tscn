@@ -1,20 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj5mq8cpsl0jx"]
+[gd_scene load_steps=9 format=3 uid="uid://dj5mq8cpsl0jx"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_k8wq4"]
 [ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_5x31f"]
+[ext_resource type="Script" path="res://Code/structures/production.gd" id="2_xp0pm"]
+[ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="4_0xd3d"]
 
-[sub_resource type="Resource" id="Resource_uvhpr"]
+[sub_resource type="Resource" id="Resource_f2tbd"]
+script = ExtResource("2_xp0pm")
+type = 3
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_6m56w"]
 script = ExtResource("2_5x31f")
 type = 1
 amount = 1.0
+
+[sub_resource type="Resource" id="Resource_p0d13"]
+script = ExtResource("4_0xd3d")
+products = Array[ExtResource("2_xp0pm")]([SubResource("Resource_f2tbd")])
+requirement = SubResource("Resource_6m56w")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sty1g"]
 
 [node name="Farm" type="Node3D"]
 script = ExtResource("1_k8wq4")
-produced_resource_type = 3
-produced_resource_amount = 10.0
-production_requirement = SubResource("Resource_uvhpr")
+production = SubResource("Resource_p0d13")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_sty1g")

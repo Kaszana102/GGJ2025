@@ -74,9 +74,8 @@ shadow_enabled = true
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_k8f8k")
 
-[node name="StructurePlacer" type="Node" parent="." node_paths=PackedStringArray("_camera")]
+[node name="StructurePlacer" type="Node" parent="."]
 script = ExtResource("3_1tu4x")
-_camera = NodePath("../RaycastCamera")
 
 [node name="RaycastCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmnimsbvv73bx"]
+[gd_scene load_steps=7 format=3 uid="uid://ce72btjoc24o3"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_8vvqo"]
 [ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="2_eit85"]
@@ -32,7 +32,6 @@ transform = Transform3D(0.75, -0.0473671, 0.65974, -0.5, 0.612372, 0.612372, -0.
 shadow_enabled = true
 
 [node name="ColonyUi" parent="." node_paths=PackedStringArray("structure_placer") instance=ExtResource("3_sqpvs")]
-offset_top = 606.0
 structure_placer = NodePath("../StructurePlacer")
 
 [node name="StructurePlacer" type="Node" parent="."]

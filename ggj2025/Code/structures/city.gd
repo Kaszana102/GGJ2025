@@ -2,7 +2,12 @@ class_name City
 
 extends Node3D
 
+const FARM = preload("res://Prefabs/Structures/farm.tscn")
+const GENERATOR = preload("res://Prefabs/Structures/generator.tscn")
+
+@export var extension_place_distance : float = 1.5
 @export var active : bool = true
+@export var max_structures : int = 6
 var structures: Array[Structure]
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +16,29 @@ func _ready() -> void:
 
 func set_active(state: bool):
 	active = state # TODO add logic to it
+	print("active: ", state)
+	
+func toggle_active():
+	set_active(not active)
+	
+func place_extension(prefab: PackedScene) -> void:
+	if len(structures) == max_structures:
+		return
+	var extension_position = Vector3(1, 0, 0) * extension_place_distance
+	extension_position = extension_position.rotated(Vector3(0, 1, 0), deg_to_rad(360.0/max_structures * len(structures)))
+	print(len(structures))
+	print(extension_position)
+	
+	var extension = prefab.instantiate()
+	extension.position = extension_position
+
+	add_child(extension)
+	
+func build_farm() -> void:
+	place_extension(FARM)
+
+func build_generator() -> void:
+	place_extension(GENERATOR)
 
 func add_structure(structure: Structure)->void:
 	structures.append(structure)

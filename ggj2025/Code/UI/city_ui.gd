@@ -2,6 +2,9 @@ class_name CityUI
 
 extends Node3D
 
+signal toggle_power
+signal build_farm
+signal build_generator
 
 var finest_italian_pasta : bool = false  # spaghetti
 
@@ -17,7 +20,16 @@ func _show_node() -> void:
 	print("city ui shown")
 	finest_italian_pasta = false
 	
+
+func _toggle_power() -> void:
+	toggle_power.emit()
 	
+func _build_farm():
+	build_farm.emit()
+
+func _build_generator():
+	build_generator.emit()
+
 	
 func _ready() -> void:
 	_hide_node()
