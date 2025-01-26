@@ -1,23 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://rm424ua78d16"]
+[gd_scene load_steps=2 format=3 uid="uid://rm424ua78d16"]
 
-[ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_2xewq"]
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="2_ggst6"]
-
-[sub_resource type="Resource" id="Resource_klndg"]
-script = ExtResource("2_2xewq")
-type = 1
-amount = 1.0
 
 [node name="KubaSandbox" type="Node3D"]
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("2_ggst6")
 energy_consumption = 0.0
-produced_resource_type = 1
-produced_resource_amount = 10.0
 
 [node name="CoalMine" type="Node3D" parent="."]
 script = ExtResource("2_ggst6")
 energy_consumption = 0.0
-produced_resource_amount = 10.0
-production_requirement = SubResource("Resource_klndg")

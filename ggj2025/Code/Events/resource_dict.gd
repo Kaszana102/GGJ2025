@@ -1,4 +1,4 @@
-class_name EventResourceRequirements
+class_name PerResourceStats
 extends Resource
 @export var resources : Dictionary = {
 	Resources.type.COAL: 0,

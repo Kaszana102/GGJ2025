@@ -1,7 +1,7 @@
 extends GameEvent
 
-@export var production_requirements : EventResourceRequirements
-@export var stockpile_requirements : EventResourceRequirements
+@export var production_requirements : PerResourceStats
+@export var stockpile_requirements : PerResourceStats
 
 func can_occur() -> bool :
 	for key in stockpile_requirements.resources:
