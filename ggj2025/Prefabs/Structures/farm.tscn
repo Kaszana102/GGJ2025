@@ -24,6 +24,7 @@ requirement = SubResource("Resource_6m56w")
 
 [node name="Farm" type="Node3D"]
 script = ExtResource("1_k8wq4")
+energy_consumption = 10.0
 production = SubResource("Resource_p0d13")
 
 [node name="Farm" parent="." instance=ExtResource("5_qb8b8")]

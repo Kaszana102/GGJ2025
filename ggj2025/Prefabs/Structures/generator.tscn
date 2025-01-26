@@ -29,6 +29,7 @@ requirement = SubResource("Resource_hr0wr")
 
 [node name="Generator" type="Node3D"]
 script = ExtResource("1_bkumi")
+energy_consumption = 0.0
 production = SubResource("Resource_wf53a")
 
 [node name="Generator" parent="." instance=ExtResource("5_it2px")]

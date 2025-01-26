@@ -17,6 +17,7 @@ products = Array[ExtResource("2_btuia")]([SubResource("Resource_5ar1j")])
 
 [node name="TerraformationStruct" type="Node3D"]
 script = ExtResource("1_6uqwd")
+energy_consumption = 3.0
 production = SubResource("Resource_5d2hs")
 
 [node name="Terraformation" parent="." instance=ExtResource("2_v77rl")]

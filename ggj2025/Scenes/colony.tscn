@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://clwghx1g1npbk"]
+[gd_scene load_steps=23 format=3 uid="uid://clwghx1g1npbk"]
 
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="1_agxwj"]
 [ext_resource type="Script" path="res://Code/Events/EventManager.gd" id="1_av1yu"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="12_oosjl"]
 [ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="13_l70im"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/resource_display.tscn" id="16_xkkvd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cayto"]
 albedo_texture = ExtResource("1_rcylo")
@@ -76,12 +77,6 @@ mesh = SubResource("BoxMesh_40wgi")
 
 [node name="City" parent="." instance=ExtResource("8_iw6m8")]
 
-[node name="Structure" type="Node3D" parent="City"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-script = ExtResource("5_16hx2")
-energy_consumption = 0.0
-production = SubResource("Resource_m4uml")
-
 [node name="StartInfo" parent="." instance=ExtResource("11_ohs0w")]
 
 [node name="RaycastCamera" type="Camera3D" parent="."]
@@ -99,3 +94,14 @@ script = ExtResource("1_r0ne8")
 script = ExtResource("13_l70im")
 rotate_speed = 0.3
 pan_speed = 1.5
+
+[node name="ResourceDisplay" parent="." instance=ExtResource("16_xkkvd")]
+
+[node name="City2" parent="." instance=ExtResource("8_iw6m8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.84883, 0)
+
+[node name="Structure" type="Node3D" parent="City2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+script = ExtResource("5_16hx2")
+energy_consumption = 0.0
+production = SubResource("Resource_m4uml")

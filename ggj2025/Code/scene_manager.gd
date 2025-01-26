@@ -16,6 +16,7 @@ func load_scene(target_scene: scene):
 	
 	
 func load_main_menu():
+	GameManager.cities = []
 	load_scene(scene.MAIN_MENU)
 	
 func load_colony():

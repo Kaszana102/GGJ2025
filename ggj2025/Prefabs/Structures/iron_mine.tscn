@@ -17,6 +17,7 @@ products = Array[ExtResource("2_of862")]([SubResource("Resource_djlhy")])
 
 [node name="IronMine" type="Node3D"]
 script = ExtResource("1_xoteh")
+energy_consumption = 5.0
 production = SubResource("Resource_5a2us")
 
 [node name="Mine" parent="." instance=ExtResource("2_3dirg")]
