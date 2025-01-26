@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 	rotation = _camera.rotation
 	
 	if fixed_size:
-		var local_position = _camera.to_local(position)  # position relative to camera local space
+		var local_position = _camera.to_local(global_position)  # position relative to camera local space
 		scale = _initial_scale * -local_position.z

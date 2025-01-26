@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyd7sto07crqg"]
+[gd_scene load_steps=6 format=3 uid="uid://dyd7sto07crqg"]
 
 [ext_resource type="Script" path="res://Code/structures/city.gd" id="1_c3aw6"]
 [ext_resource type="Script" path="res://Code/UI/clickable_object_3d.gd" id="2_rqfio"]
+[ext_resource type="PackedScene" uid="uid://bc1nv7mrt8tfx" path="res://Prefabs/UI/city_ui.tscn" id="3_dokq5"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8kr81"]
 
@@ -18,3 +19,8 @@ script = ExtResource("2_rqfio")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ClickableObject3D"]
 shape = SubResource("SphereShape3D_6xroe")
+
+[node name="CityUi" parent="." instance=ExtResource("3_dokq5")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75557, 0)
+
+[connection signal="clicked" from="ClickableObject3D" to="CityUi" method="_show_node"]
