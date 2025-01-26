@@ -2,8 +2,8 @@ class_name ResourceDisplay
 
 extends Control
 
-var resources = GameManager.resources
-var prev_resources = GameManager.resources
+var resources = GameManager.resources.duplicate(true)
+var prev_resources = GameManager.resources.duplicate(true)
 ## class for display all resources in a hbox layout
 
 func _init() -> void:
@@ -25,9 +25,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	prev_resources = resources
-	resources = GameManager.resources
+	pass
+
+func _physics_process(delta: float) -> void:
+	prev_resources = resources.duplicate(true)
+	resources = GameManager.resources.duplicate(true)
 	for resource in resources:
-		var resource_delta : float = resources[resource] - prev_resources[resource]
-		$container.get_child(resource).set_production_text(resource_delta / delta)
+		var resource_production = 0
+		for city in GameManager.cities:
+			if resource == Resources.type.ENERGY:
+				resource_production -= city.calc_energy()
+			for structure in city.structures:
+				for product in	structure.production.products:
+					if product.type == resource:
+						resource_production += product.amount
+						
+		$container.get_child(resource).set_production_text(resource_production)
 		$container.get_child(resource).set_total(resources[resource])

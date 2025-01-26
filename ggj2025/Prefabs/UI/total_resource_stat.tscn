@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8faa4c4wylyk"]
+[gd_scene load_steps=6 format=3 uid="uid://cd0ah1helyysn"]
 
 [ext_resource type="Texture2D" uid="uid://b7044s6sgnd42" path="res://Art/ui textures/icon-with-two-labels.png" id="1_2rppc"]
 [ext_resource type="Script" path="res://Code/UI/total_resource_stat.gd" id="1_ufpdk"]
 [ext_resource type="LabelSettings" uid="uid://c6php7mdh4lh0" path="res://Prefabs/UI/resource_icon_font.tres" id="3_die3r"]
-[ext_resource type="PackedScene" uid="uid://2qf20hbvp7fa" path="res://Prefabs/UI/resource_icon.tscn" id="3_rfhmf"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/resource_icon.tscn" id="3_rfhmf"]
 [ext_resource type="LabelSettings" uid="uid://mdibv8iglkh0" path="res://Prefabs/UI/event_button_font.tres" id="4_eqq0p"]
 
 [node name="TotalResourceStat" type="BoxContainer"]
