@@ -55,14 +55,12 @@ func build_generator() -> void:
 		GameManager.subtract_resource(Resources.type.IRON, 45)
 
 func build_coal_mine() -> void:
-	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)]) and 
-		GameManager.is_point_on_ore(position, Ore.type.COAL, 5)):
+	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)])):
 		GameManager.subtract_resource(Resources.type.IRON, 25)
 		place_extension(COAL)
 
 func build_iron_mine() -> void:
-	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)]) and 
-		GameManager.is_point_on_ore(position, Ore.type.IRON, 5)):
+	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)])):
 		GameManager.subtract_resource(Resources.type.IRON, 25)
 		place_extension(IRON)
 
