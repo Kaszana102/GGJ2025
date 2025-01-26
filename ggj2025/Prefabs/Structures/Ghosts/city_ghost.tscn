@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://t7y67sueah6u"]
+[gd_scene load_steps=5 format=3 uid="uid://t7y67sueah6u"]
 
 [ext_resource type="Script" path="res://Code/structures/structure_ghost.gd" id="1_uu6f7"]
-[ext_resource type="PackedScene" uid="uid://dyd7sto07crqg" path="res://Prefabs/Structures/city.tscn" id="2_11x4q"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_3adjq"]
+[ext_resource type="PackedScene" uid="uid://cbdvd24cnr7co" path="res://Prefabs/Structures/city.tscn" id="2_11x4q"]
+[ext_resource type="PackedScene" uid="uid://b6d8jik3c5ix4" path="res://Art/models/blender/city/city_layout.glb" id="3_co7fg"]
+[ext_resource type="PackedScene" uid="uid://jr61um636drb" path="res://Prefabs/Environment/Dome/dome.tscn" id="4_vg6sg"]
 
 [node name="CityGhost" type="Node3D"]
 script = ExtResource("1_uu6f7")
 structure = ExtResource("2_11x4q")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("SphereMesh_3adjq")
+[node name="city_layout" parent="." instance=ExtResource("3_co7fg")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0.3, 0)
+
+[node name="Dome" parent="." instance=ExtResource("4_vg6sg")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0.146168, 0)

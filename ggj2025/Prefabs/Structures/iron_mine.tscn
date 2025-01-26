@@ -1,20 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://btnrbkcwu7j5i"]
+[gd_scene load_steps=3 format=3 uid="uid://btnrbkcwu7j5i"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_xoteh"]
-[ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_upsm7"]
-
-[sub_resource type="Resource" id="Resource_u3a0b"]
-script = ExtResource("2_upsm7")
-type = 1
-amount = 1.0
 
 [sub_resource type="PrismMesh" id="PrismMesh_3446g"]
 
 [node name="IronMine" type="Node3D"]
 script = ExtResource("1_xoteh")
-produced_resource_type = 2
-produced_resource_amount = 10.0
-production_requirement = SubResource("Resource_u3a0b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PrismMesh_3446g")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dasvxa31lf80u"]
+[gd_scene load_steps=10 format=3 uid="uid://dasvxa31lf80u"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_bkumi"]
 [ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_2c7x1"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="2_mrv3c"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="4_lkfpm"]
 [ext_resource type="PackedScene" uid="uid://6xqmctjavrdi" path="res://Prefabs/Environment/Generator/generator.tscn" id="5_it2px"]
+[ext_resource type="PackedScene" uid="uid://jr61um636drb" path="res://Prefabs/Environment/Dome/dome.tscn" id="6_l6bv4"]
 
 [sub_resource type="Resource" id="Resource_k1iiq"]
 script = ExtResource("2_mrv3c")
@@ -26,4 +27,7 @@ script = ExtResource("1_bkumi")
 production = SubResource("Resource_wf53a")
 
 [node name="Generator" parent="." instance=ExtResource("5_it2px")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.311465, 0)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0.187377, 0)
+
+[node name="Dome" parent="." instance=ExtResource("6_l6bv4")]
+transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, 0, 0, 0)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dj5mq8cpsl0jx"]
+[gd_scene load_steps=10 format=3 uid="uid://dj5mq8cpsl0jx"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_k8wq4"]
 [ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_5x31f"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="2_xp0pm"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="4_0xd3d"]
 [ext_resource type="PackedScene" uid="uid://v11rhubhlivl" path="res://Prefabs/Environment/Farm/farm.tscn" id="5_qb8b8"]
+[ext_resource type="PackedScene" uid="uid://jr61um636drb" path="res://Prefabs/Environment/Dome/dome.tscn" id="6_h47sl"]
 
 [sub_resource type="Resource" id="Resource_f2tbd"]
 script = ExtResource("2_xp0pm")
@@ -27,3 +28,6 @@ production = SubResource("Resource_p0d13")
 
 [node name="Farm" parent="." instance=ExtResource("5_qb8b8")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.148, 0)
+
+[node name="Dome" parent="." instance=ExtResource("6_h47sl")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
