@@ -17,6 +17,8 @@ func _ready() -> void:
 ## produces resource in given delta time
 ## doesn consume energy, as it is calculated in gamemanager already
 func produce(delta: float) -> Array[Production]:
+	if not production:
+		return [] # todo awful fix
 	if production.products.size() == 0:
 		return []
 	var percentage = 1 # 100%
@@ -38,4 +40,7 @@ func produce(delta: float) -> Array[Production]:
 ## positive meanit adds energy
 ## not taking time into account
 func energy_influcce():
-	return production.produced_energy()
+	if production:
+		return production.produced_energy()
+	else:
+		return 0  # TODO awful fix

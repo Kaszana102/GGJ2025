@@ -38,29 +38,29 @@ func place_extension(prefab: PackedScene) -> void:
 	add_child(extension)
 	
 func build_farm() -> void:
-	if GameManager.can_afford([Production.construct(Resources.type.IRON, 100)]):
+	if GameManager.can_afford([Production.construct(Resources.type.IRON, 100)])  or true:
 		place_extension(FARM)
 
 func build_generator() -> void:
-	if GameManager.can_afford([Production.construct(Resources.type.IRON, 45)]):
+	if GameManager.can_afford([Production.construct(Resources.type.IRON, 45)]) or true:
 		place_extension(GENERATOR)
 		GameManager.subtract_resource(Resources.type.IRON, 45)
 
 func build_coal_mine() -> void:
 	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)]) and 
-		GameManager.is_point_on_ore(position, Ore.type.COAL, 5)):
+		GameManager.is_point_on_ore(position, Ore.type.COAL, 5) or true):
 		GameManager.subtract_resource(Resources.type.IRON, 25)
 		place_extension(COAL)
 
 func build_iron_mine() -> void:
 	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)]) and 
-		GameManager.is_point_on_ore(position, Ore.type.IRON, 5)):
+		GameManager.is_point_on_ore(position, Ore.type.IRON, 5)  or true):
 		GameManager.subtract_resource(Resources.type.IRON, 25)
 		place_extension(IRON)
 
 func build_terraform() -> void:
-	if GameManager.can_afford([Production.construct(Resources.type.IRON, 100)]):
-		GameManager.subtract_resource(Resources.type.IRON, 100)
+	if GameManager.can_afford([Production.construct(Resources.type.IRON, 100)])  or true:
+		GameManager.subtract_resource(Resources.type.IRON, 100) 
 		place_extension(TERRAFORM)
 
 func add_structure(structure: Structure)->void:

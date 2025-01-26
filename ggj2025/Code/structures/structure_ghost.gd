@@ -8,8 +8,8 @@ extends Node3D
 ## The structure that will be placed
 @export var structure: PackedScene
 
-@export var min_radius : float = 1
-@export var max_radius : float = 5
+@export var min_radius : float = 4
+@export var max_radius : float = 8
 @export var needed_deposit_ore : DepositRequirement
 
 @export var place_cost : Array[ResourceRequirement] = []
@@ -23,8 +23,8 @@ var max_radius_was:= true
 var max_radius_ore_was:= true
 
 func _init():
-	min_radius_circle = create_radius_circle(Vector3(0,0.01,0),min_radius, Color.RED)
-	max_radius_circle = create_radius_circle(Vector3(0,0.03,0),max_radius, Color.YELLOW)
+	min_radius_circle = create_radius_circle(Vector3(0,0.01,0.005),min_radius, Color.RED)
+	max_radius_circle = create_radius_circle(Vector3(0,0.03,0.005),max_radius, Color.YELLOW)
 	max_radius_ore_circle = create_radius_circle(Vector3(0,0.06,0),1.0, Color.BLUE)
 
 func create_radius_circle(offset: Vector3, radius: float, color: Color) -> Node3D:

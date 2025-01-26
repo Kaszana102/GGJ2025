@@ -32,6 +32,7 @@ func _build_farm():
 
 func _build_coal():
 	build_coal.emit()
+	print("COAL A")
 	
 func _build_iron():
 	build_iron.emit()

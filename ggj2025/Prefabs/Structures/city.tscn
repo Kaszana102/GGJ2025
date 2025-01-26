@@ -13,6 +13,7 @@ radius = 0.6
 
 [node name="City" type="Node3D"]
 script = ExtResource("1_c3aw6")
+extension_place_distance = 1.75
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false

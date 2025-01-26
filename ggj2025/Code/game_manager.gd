@@ -102,6 +102,7 @@ func has_resource(type: Resources.type, amount: float) -> bool:
 	return false
 
 func can_afford(reqs: Array[Production])-> bool:
+	return true  # sorry Kuba :(
 	for req in reqs:
 		if resources.get(req.type) < req.amount:
 			return false

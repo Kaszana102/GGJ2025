@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://jr61um636drb"]
+[gd_scene load_steps=2 format=3 uid="uid://jr61um636drb"]
 
-[ext_resource type="PackedScene" uid="uid://cl78x75t7ug84" path="res://Art/models/blender/dome/dome-highlight.blend" id="1_mrweg"]
 [ext_resource type="PackedScene" uid="uid://nbguxjf5q6tp" path="res://Art/models/blender/dome/dome.blend" id="2_ntfts"]
 
 [node name="Dome" type="Node3D"]
-
-[node name="dome-highlight" parent="." instance=ExtResource("1_mrweg")]
 
 [node name="dome" parent="." instance=ExtResource("2_ntfts")]
 

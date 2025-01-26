@@ -1,4 +1,4 @@
-[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c6php7mdh4lh0"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b6hyj2ep0veb0"]
 
 [sub_resource type="SystemFont" id="SystemFont_7k3ot"]
 font_names = PackedStringArray("Hack")
