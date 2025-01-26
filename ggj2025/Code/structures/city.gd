@@ -4,6 +4,9 @@ extends Node3D
 
 const FARM = preload("res://Prefabs/Structures/farm.tscn")
 const GENERATOR = preload("res://Prefabs/Structures/generator.tscn")
+const IRON = preload("res://Prefabs/Structures/iron_mine.tscn")
+const COAL = preload("res://Prefabs/Structures/coal_mine.tscn")
+const TERRAFORM = preload("res://Prefabs/Structures/terraformation_struct.tscn")
 
 @export var extension_place_distance : float = 1.5
 @export var active : bool = true
@@ -35,10 +38,30 @@ func place_extension(prefab: PackedScene) -> void:
 	add_child(extension)
 	
 func build_farm() -> void:
-	place_extension(FARM)
+	if GameManager.can_afford([Production.construct(Resources.type.IRON, 100)]):
+		place_extension(FARM)
 
 func build_generator() -> void:
-	place_extension(GENERATOR)
+	if GameManager.can_afford([Production.construct(Resources.type.IRON, 45)]):
+		place_extension(GENERATOR)
+		GameManager.subtract_resource(Resources.type.IRON, 45)
+
+func build_coal_mine() -> void:
+	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)]) and 
+		GameManager.is_point_on_ore(position, Ore.type.COAL, 5)):
+		GameManager.subtract_resource(Resources.type.IRON, 25)
+		place_extension(COAL)
+
+func build_iron_mine() -> void:
+	if (GameManager.can_afford([Production.construct(Resources.type.IRON, 25)]) and 
+		GameManager.is_point_on_ore(position, Ore.type.IRON, 5)):
+		GameManager.subtract_resource(Resources.type.IRON, 25)
+		place_extension(IRON)
+
+func build_terraform() -> void:
+	if GameManager.can_afford([Production.construct(Resources.type.IRON, 100)]):
+		GameManager.subtract_resource(Resources.type.IRON, 100)
+		place_extension(TERRAFORM)
 
 func add_structure(structure: Structure)->void:
 	structures.append(structure)

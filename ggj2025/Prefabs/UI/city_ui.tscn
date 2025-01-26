@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bds06p104g3ry"]
+[gd_scene load_steps=6 format=3 uid="uid://cd61h0nt3tsn7"]
 
 [ext_resource type="Script" path="res://Code/UI/billboard.gd" id="1_cbqea"]
 [ext_resource type="Script" path="res://Code/UI/city_ui.gd" id="1_wa5o0"]
@@ -15,6 +15,7 @@ script = ExtResource("1_wa5o0")
 script = ExtResource("1_cbqea")
 
 [node name="Power" type="Sprite3D" parent="Billboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47011, 0)
 no_depth_test = true
 texture = ExtResource("2_10p7q")
 
@@ -46,6 +47,41 @@ script = ExtResource("3_sm02w")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Billboard/BuildGenerator/ClickableObject3D"]
 shape = SubResource("BoxShape3D_5rjsa")
 
+[node name="BuildCoal" type="Sprite3D" parent="Billboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.712594, 0)
+no_depth_test = true
+texture = ExtResource("2_10p7q")
+
+[node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildCoal"]
+script = ExtResource("3_sm02w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Billboard/BuildCoal/ClickableObject3D"]
+shape = SubResource("BoxShape3D_5rjsa")
+
+[node name="BuildIron" type="Sprite3D" parent="Billboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10747, 0.712594, 0)
+no_depth_test = true
+texture = ExtResource("2_10p7q")
+
+[node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildIron"]
+script = ExtResource("3_sm02w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Billboard/BuildIron/ClickableObject3D"]
+shape = SubResource("BoxShape3D_5rjsa")
+
+[node name="BuildTerraform" type="Sprite3D" parent="Billboard"]
+no_depth_test = true
+texture = ExtResource("2_10p7q")
+
+[node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildTerraform"]
+script = ExtResource("3_sm02w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Billboard/BuildTerraform/ClickableObject3D"]
+shape = SubResource("BoxShape3D_5rjsa")
+
 [connection signal="clicked" from="Billboard/Power/ClickableObject3D" to="." method="_toggle_power"]
 [connection signal="clicked" from="Billboard/BuildFarm/ClickableObject3D" to="." method="_build_farm"]
 [connection signal="clicked" from="Billboard/BuildGenerator/ClickableObject3D" to="." method="_build_generator"]
+[connection signal="clicked" from="Billboard/BuildCoal/ClickableObject3D" to="." method="_build_coal"]
+[connection signal="clicked" from="Billboard/BuildIron/ClickableObject3D" to="." method="_build_iron"]
+[connection signal="clicked" from="Billboard/BuildTerraform/ClickableObject3D" to="." method="_build_terraform"]

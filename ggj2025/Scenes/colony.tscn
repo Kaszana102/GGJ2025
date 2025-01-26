@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bnxq3872mylml" path="res://Art/audio/error1.wav" id="3_r4myi"]
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="5_16hx2"]
 [ext_resource type="PackedScene" uid="uid://b8hubehg3ensk" path="res://Prefabs/Ore/coal_ore.tscn" id="7_mf18p"]
-[ext_resource type="PackedScene" path="res://Prefabs/Structures/city.tscn" id="8_iw6m8"]
+[ext_resource type="PackedScene" uid="uid://cbdvd24cnr7co" path="res://Prefabs/Structures/city.tscn" id="8_iw6m8"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="9_l7d7i"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_us316"]
 [ext_resource type="PackedScene" uid="uid://xo4ddymu6n1k" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
@@ -53,9 +53,8 @@ shape = SubResource("BoxShape3D_xqbet")
 transform = Transform3D(0.75, -0.0473671, 0.65974, -0.5, 0.612372, 0.612372, -0.433013, -0.789149, 0.435596, 0, 3, 0)
 shadow_enabled = true
 
-[node name="StructurePlacer" type="Node" parent="." node_paths=PackedStringArray("_camera")]
+[node name="StructurePlacer" type="Node" parent="."]
 script = ExtResource("1_r0ne8")
-_camera = NodePath("../RaycastCamera")
 
 [node name="Building" type="AudioStreamPlayer" parent="StructurePlacer"]
 stream = ExtResource("2_dml76")
