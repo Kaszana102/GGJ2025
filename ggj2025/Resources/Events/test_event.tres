@@ -38,7 +38,7 @@ script = ExtResource("2_r7432")
 production = {
 0: 0,
 1: 0,
-2: 20,
+2: 0,
 3: 0,
 4: 0
 }

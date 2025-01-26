@@ -19,6 +19,7 @@ func _ready() -> void:
 		print("failed to open resource directory")
 	for event in events:
 		event.doesitwork()
+		
 	# Set up event timer
 	timer = Timer.new()
 	add_child(timer)
@@ -31,6 +32,7 @@ func _on_timer_timeout() -> void:
 	timer.wait_time = randf_range(min_time_between_events, max_time_between_events)
 	# TODO : pick random event from available ones
 	queued_event = events[0]
+	
 
 func consume_event() -> void:
 	if events.find(queued_event) != -1:
