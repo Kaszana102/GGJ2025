@@ -9,3 +9,4 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 	var click_event := event as InputEventMouseButton
 	if click_event and click_event.button_index == 1 and click_event.pressed:
 		clicked.emit()
+		print("it is I, a Clickable Object. Henceforth I have been CLICKED")

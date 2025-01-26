@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyd7sto07crqg"]
+[gd_scene load_steps=5 format=3 uid="uid://dyd7sto07crqg"]
 
 [ext_resource type="Script" path="res://Code/structures/city.gd" id="1_c3aw6"]
+[ext_resource type="Script" path="res://Code/UI/clickable_object_3d.gd" id="2_rqfio"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8kr81"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6xroe"]
 
 [node name="City" type="Node3D"]
 script = ExtResource("1_c3aw6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_8kr81")
+
+[node name="ClickableObject3D" type="Area3D" parent="."]
+script = ExtResource("2_rqfio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClickableObject3D"]
+shape = SubResource("SphereShape3D_6xroe")

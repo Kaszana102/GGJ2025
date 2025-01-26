@@ -46,5 +46,5 @@ func _process(delta: float) -> void:
 				clear_structure_ghost()
 				
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			print("fghh")
+			print("place")
 			place_structure()
