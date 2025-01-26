@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmwsd3wvkvm8c"]
+[gd_scene load_steps=9 format=3 uid="uid://cmwsd3wvkvm8c"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_6et27"]
 [ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="2_fd0d8"]
 [ext_resource type="Script" path="res://Code/Events/EventManager.gd" id="3_saixt"]
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="4_pfcfw"]
+[ext_resource type="PackedScene" uid="uid://u76odiy7ufn1" path="res://Prefabs/UI/resource_display.tscn" id="5_a0ya7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_peyhc"]
 
@@ -51,3 +52,7 @@ mesh = SubResource("SphereMesh_ck0kp")
 script = ExtResource("3_saixt")
 
 [node name="ColonyUi" parent="." instance=ExtResource("4_pfcfw")]
+
+[node name="ResourceDisplay" parent="." instance=ExtResource("5_a0ya7")]
+offset_top = 15.64
+offset_bottom = 15.64

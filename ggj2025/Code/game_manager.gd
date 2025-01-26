@@ -7,6 +7,7 @@ enum GameState {PLAYING,FAILED, WIN}
 ## Key: [Resources.type]
 ## Value: float
 var resources : Dictionary= {} 
+var production : Dictionary= {} 
 var production_bonuses:= PerResourceStats.new()
 var cities: Array[City]
 ## dictionary of available ore deposits on the map

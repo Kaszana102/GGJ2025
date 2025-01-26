@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkdu5kucvf6n1"]
+[gd_scene load_steps=10 format=3 uid="uid://dkdu5kucvf6n1"]
 
 [ext_resource type="Script" path="res://Code/UI/colony_ui.gd" id="1_jkll5"]
-[ext_resource type="Script" path="res://Code/UI/resource_display.gd" id="1_t6ejh"]
 [ext_resource type="Script" path="res://Code/UI/build_structure_button.gd" id="2_6hutb"]
 [ext_resource type="Script" path="res://Code/UI/blackoutUI.gd" id="2_p513n"]
 [ext_resource type="PackedScene" path="res://Prefabs/Structures/Ghosts/coal_mine_ghost.tscn" id="4_o02jt"]
@@ -13,11 +12,6 @@
 
 [node name="ColonyUi" type="Node3D"]
 script = ExtResource("1_jkll5")
-
-[node name="ResourceDisplay" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_t6ejh")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 anchors_preset = 7

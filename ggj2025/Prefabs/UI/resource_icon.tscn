@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2qf20hbvp7fa"]
+
+[ext_resource type="Texture2D" uid="uid://db6end4p4j1nv" path="res://Art/ui textures/terraformation-icon.png" id="1_ys7y3"]
+[ext_resource type="Script" path="res://Code/UI/resource_icon.gd" id="2_68dju"]
+
+[node name="Icon" type="TextureRect"]
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 86.0
+offset_bottom = 82.0
+texture = ExtResource("1_ys7y3")
+expand_mode = 2
+script = ExtResource("2_68dju")
