@@ -48,9 +48,8 @@ script = ExtResource("1_wg3im")
 script = ExtResource("2_frg55")
 _structure_placer = NodePath("../StructurePlacer")
 
-[node name="StructurePlacer" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_camera")]
+[node name="StructurePlacer" type="Node" parent="RaycastCamera"]
 script = ExtResource("4_gyu70")
-_camera = NodePath("..")
 
 [node name="CameraMovement" type="Node3D" parent="RaycastCamera"]
 script = ExtResource("1_nciwg")

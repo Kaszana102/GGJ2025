@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjkannkc13ctp"]
+[gd_scene load_steps=11 format=3 uid="uid://bjkannkc13ctp"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_8smuu"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="2_c248a"]
@@ -15,6 +15,14 @@ amount = 10.0
 script = ExtResource("3_qq04f")
 products = Array[ExtResource("2_c248a")]([SubResource("Resource_d4vxb")])
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8qa7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80ck4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pe7cm"]
+size = Vector3(0.58, 0.45, 0.545)
+
 [node name="CoalMine" type="Node3D"]
 script = ExtResource("1_8smuu")
 production = SubResource("Resource_7id64")
@@ -24,3 +32,8 @@ transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0.205312, 0)
 
 [node name="Dome" parent="." instance=ExtResource("5_6d73t")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_j8qa7")
+material_overlay = SubResource("StandardMaterial3D_80ck4")
+mesh = SubResource("BoxMesh_pe7cm")

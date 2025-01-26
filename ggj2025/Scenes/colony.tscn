@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://clwghx1g1npbk"]
+[gd_scene load_steps=23 format=3 uid="uid://clwghx1g1npbk"]
 
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="1_agxwj"]
 [ext_resource type="Script" path="res://Code/structures/structure_placer.gd" id="1_r0ne8"]
+[ext_resource type="Texture2D" uid="uid://yw8t7p6spcc" path="res://Art/textures/environment/environment.png" id="1_rcylo"]
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="2_c6cm5"]
 [ext_resource type="AudioStream" uid="uid://cmgwgmjlsq7gd" path="res://Art/audio/building.wav" id="2_dml76"]
 [ext_resource type="AudioStream" uid="uid://bnxq3872mylml" path="res://Art/audio/error1.wav" id="3_r4myi"]
@@ -10,7 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://cbdvd24cnr7co" path="res://Prefabs/Structures/city.tscn" id="8_iw6m8"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="9_l7d7i"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_us316"]
-[ext_resource type="PackedScene" uid="uid://xo4ddymu6n1k" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
+[ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="12_oosjl"]
+[ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="13_l70im"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cayto"]
+albedo_texture = ExtResource("1_rcylo")
+metallic_specular = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_8hipj"]
 
@@ -42,6 +49,7 @@ products = Array[ExtResource("9_l7d7i")]([SubResource("Resource_bi4vb"), SubReso
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 1.50607, 0, 0)
+material_override = SubResource("StandardMaterial3D_cayto")
 mesh = SubResource("BoxMesh_8hipj")
 
 [node name="Area3D" type="Area3D" parent="MeshInstance3D"]
@@ -62,10 +70,6 @@ stream = ExtResource("2_dml76")
 [node name="Error1" type="AudioStreamPlayer" parent="StructurePlacer"]
 stream = ExtResource("3_r4myi")
 
-[node name="RaycastCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, 5.55976)
-script = ExtResource("2_c6cm5")
-
 [node name="ColonyUi" parent="." node_paths=PackedStringArray("structure_placer") instance=ExtResource("1_agxwj")]
 structure_placer = NodePath("../StructurePlacer")
 
@@ -73,6 +77,7 @@ structure_placer = NodePath("../StructurePlacer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60255, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ore"]
+visible = false
 mesh = SubResource("BoxMesh_40wgi")
 
 [node name="City" parent="." instance=ExtResource("8_iw6m8")]
@@ -84,3 +89,19 @@ energy_consumption = 0.0
 production = SubResource("Resource_m4uml")
 
 [node name="StartInfo" parent="." instance=ExtResource("11_ohs0w")]
+
+[node name="RaycastCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766045, 0, -0.766045, 0.642788, 0, 1.86, 0)
+script = ExtResource("2_c6cm5")
+
+[node name="TestUI" type="Node" parent="RaycastCamera" node_paths=PackedStringArray("_structure_placer")]
+script = ExtResource("12_oosjl")
+_structure_placer = NodePath("../StructurePlacer")
+
+[node name="StructurePlacer" type="Node" parent="RaycastCamera"]
+script = ExtResource("1_r0ne8")
+
+[node name="CameraMovement" type="Node3D" parent="RaycastCamera"]
+script = ExtResource("13_l70im")
+rotate_speed = 0.3
+pan_speed = 1.5
