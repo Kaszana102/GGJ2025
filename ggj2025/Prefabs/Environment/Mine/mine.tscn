@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj70pwb8wnu5b"]
+[gd_scene load_steps=5 format=3 uid="uid://cj70pwb8wnu5b"]
 
-[ext_resource type="PackedScene" uid="uid://drhml48bpb4mh" path="res://Art/models/blender/layout/mines.blend" id="1_8v6qs"]
 [ext_resource type="PackedScene" uid="uid://b07ok4q8hxw05" path="res://Art/models/blender/mine/container.blend" id="2_ltg17"]
 [ext_resource type="PackedScene" uid="uid://b7kxq3wxkktgc" path="res://Art/models/blender/mine/drill.blend" id="3_3h3f5"]
 [ext_resource type="PackedScene" uid="uid://c364cqb875vqk" path="res://Art/models/blender/mine/scaffolding.blend" id="4_inmya"]
 [ext_resource type="PackedScene" uid="uid://d0yl0et05qd2w" path="res://Art/models/blender/mine/crystal.blend" id="5_k3if8"]
 
 [node name="Mine" type="Node3D"]
-
-[node name="mines" parent="." instance=ExtResource("1_8v6qs")]
-visible = false
 
 [node name="container" parent="." instance=ExtResource("2_ltg17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0875931, -3.83638, -16.2331)
