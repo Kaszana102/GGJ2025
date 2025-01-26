@@ -1,20 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://dasvxa31lf80u"]
+[gd_scene load_steps=9 format=3 uid="uid://dasvxa31lf80u"]
 
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="1_bkumi"]
 [ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_2c7x1"]
+[ext_resource type="Script" path="res://Code/structures/production.gd" id="2_mrv3c"]
+[ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="4_lkfpm"]
 
-[sub_resource type="Resource" id="Resource_4fpvx"]
+[sub_resource type="Resource" id="Resource_k1iiq"]
+script = ExtResource("2_mrv3c")
+type = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_hr0wr"]
 script = ExtResource("2_2c7x1")
 type = 0
-amount = 1.0
+amount = 0.0
+
+[sub_resource type="Resource" id="Resource_wf53a"]
+script = ExtResource("4_lkfpm")
+products = Array[ExtResource("2_mrv3c")]([SubResource("Resource_k1iiq")])
+requirement = SubResource("Resource_hr0wr")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_hwu7r"]
 
 [node name="Generator" type="Node3D"]
 script = ExtResource("1_bkumi")
-produced_resource_type = 1
-produced_resource_amount = 10.0
-production_requirement = SubResource("Resource_4fpvx")
+production = SubResource("Resource_wf53a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_hwu7r")

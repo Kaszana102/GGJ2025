@@ -38,8 +38,15 @@ func place_structure() -> void:
 		pass
 
 func play_legal_placement_sound()->void:
+	if build_sound_source == null:
+		print("NO SOUND SOURCE")
+		return
 	build_sound_source.play()
+	
 func play_illegal_placement_sound()->void:
+	if build_error_sound_source == null:
+		print("NO SOUND SOURCE")
+		return
 	build_error_sound_source.play()
 
 func has_structure_ghost() -> bool:

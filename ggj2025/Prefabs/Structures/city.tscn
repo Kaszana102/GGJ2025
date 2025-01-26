@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/structures/city.gd" id="1_c3aw6"]
 [ext_resource type="Script" path="res://Code/UI/clickable_object_3d.gd" id="2_rqfio"]
-[ext_resource type="PackedScene" uid="uid://bc1nv7mrt8tfx" path="res://Prefabs/UI/city_ui.tscn" id="3_dokq5"]
+[ext_resource type="PackedScene" uid="uid://bds06p104g3ry" path="res://Prefabs/UI/city_ui.tscn" id="3_dokq5"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8kr81"]
 
@@ -24,3 +24,6 @@ shape = SubResource("SphereShape3D_6xroe")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.75557, 0)
 
 [connection signal="clicked" from="ClickableObject3D" to="CityUi" method="_show_node"]
+[connection signal="build_farm" from="CityUi" to="." method="build_farm"]
+[connection signal="build_generator" from="CityUi" to="." method="build_generator"]
+[connection signal="toggle_power" from="CityUi" to="." method="toggle_active"]
