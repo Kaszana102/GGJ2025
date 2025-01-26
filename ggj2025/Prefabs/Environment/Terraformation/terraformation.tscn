@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0pmhejdmiojf"]
+
+[ext_resource type="PackedScene" uid="uid://cdsf416bx1j8k" path="res://Prefabs/Environment/Farm/tree.tscn" id="1_e8qpe"]
+[ext_resource type="PackedScene" uid="uid://b5rqq6ipoon5x" path="res://Art/models/blender/farm/leaves.blend" id="2_yya7j"]
+
+[node name="Terraformation" type="Node3D"]
+
+[node name="Tree" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 17.7059, 1.90735e-06, -2.53925)
+
+[node name="Tree7" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(-0.358189, 0.0927878, 1.14153, 0, 1.19606, -0.0972199, -1.14529, -0.0290193, -0.357012, -8.77463, 1.90735e-06, 17.5378)
+
+[node name="Tree8" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(1.06755, -0.0214872, -0.264348, 1.65398e-09, 1.09638, -0.0891182, 0.26522, 0.086489, 1.06404, 18.9055, -0.946949, 15.1502)
+
+[node name="Tree9" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(0.776398, -0.0156271, -0.192253, 1.20289e-09, 0.79737, -0.0648132, 0.192887, 0.0629011, 0.773846, -6.00843, -1.28124, -17.5136)
+
+[node name="Tree2" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(0.486282, 0, -0.757317, 0, 0.9, 0, 0.757317, 0, 0.486282, -4.53722, 0, -5.05124)
+
+[node name="Tree4" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(0.734154, 0, 0.317834, 0.0653432, 0.782911, -0.150934, -0.311044, 0.164471, 0.718471, -18.3818, -2.36738, -14.3167)
+
+[node name="Tree10" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(-0.22723, 0.163446, 0.749434, 0.308165, 0.735226, -0.0669105, -0.702425, 0.269682, -0.271792, 4.69785, -1.04641, 21.9272)
+
+[node name="Tree5" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(-0.759729, 0.183661, 0.623763, 0.081679, 0.978638, -0.188668, -0.645089, -0.092388, -0.758501, -18.408, -1.01709, 1.0064)
+
+[node name="Tree6" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(-0.759729, 0.183661, 0.623763, 0.081679, 0.978638, -0.188668, -0.645089, -0.092388, -0.758501, 10.5259, -0.459787, -16.4588)
+
+[node name="Tree3" parent="." instance=ExtResource("1_e8qpe")]
+transform = Transform3D(0.825789, 0.0260757, -0.726219, -0.0794974, 1.09594, -0.0510462, 0.722325, 0.0908053, 0.824622, 4.81413, 0, 5.58468)
+
+[node name="leaves" parent="." instance=ExtResource("2_yya7j")]
+transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 7, 0, -7.09736, 0)
