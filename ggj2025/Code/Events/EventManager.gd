@@ -37,7 +37,7 @@ func _on_timer_timeout() -> void:
 	print("timer timeout")
 	timer.wait_time = randf_range(min_time_between_events, max_time_between_events)
 	# TODO : pick random event from available ones
-	queued_event = events[0]
+	queued_event = events.pick_random()
 	popup = preload("res://Prefabs/UI/event_ui.tscn").instantiate()
 	add_child(popup)
 	popup.setup(queued_event)
