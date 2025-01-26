@@ -1,6 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpyd5qrm61wxq"]
+[gd_scene load_steps=7 format=3 uid="uid://dpyd5qrm61wxq"]
 
+[ext_resource type="Texture2D" uid="uid://c4bsyoj086g42" path="res://Art/ui textures/small-icon-with-slanted-label.png" id="1_3hdp2"]
 [ext_resource type="Script" path="res://Code/UI/event_choice_button.gd" id="1_f0cf2"]
+[ext_resource type="Texture2D" uid="uid://d28bj8fk5wl35" path="res://Art/ui textures/small-icon-with-slanted-label-pressed.png" id="2_c8nh6"]
+[ext_resource type="Texture2D" uid="uid://cggfryinjir2q" path="res://Art/ui textures/small-icon-with-slanted-label-disabled.png" id="2_f5jty"]
+[ext_resource type="Texture2D" uid="uid://bg360lk4fbkwb" path="res://Art/ui textures/small-icon-with-slanted-label-highlight.png" id="3_gxw0i"]
+[ext_resource type="LabelSettings" uid="uid://mdibv8iglkh0" path="res://Prefabs/UI/event_button_font.tres" id="6_apdqc"]
 
-[node name="ChoiceButton" type="Button"]
+[node name="ChoiceButton" type="TextureButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("1_3hdp2")
+texture_pressed = ExtResource("2_c8nh6")
+texture_hover = ExtResource("3_gxw0i")
+texture_disabled = ExtResource("2_f5jty")
 script = ExtResource("1_f0cf2")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 49.0
+offset_right = 465.0
+offset_bottom = 94.0
+text = "accept the alien invasion idk "
+label_settings = ExtResource("6_apdqc")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Resources" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 25.0
+offset_top = 21.0
+offset_right = 100.0
+offset_bottom = 93.0

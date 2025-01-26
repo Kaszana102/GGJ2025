@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6flbsos36ufj"]
+
+[ext_resource type="Texture2D" uid="uid://c4bsyoj086g42" path="res://Art/ui textures/small-icon-with-slanted-label.png" id="1_celcx"]
+[ext_resource type="Texture2D" uid="uid://d28bj8fk5wl35" path="res://Art/ui textures/small-icon-with-slanted-label-pressed.png" id="2_xyn66"]
+[ext_resource type="Texture2D" uid="uid://bg360lk4fbkwb" path="res://Art/ui textures/small-icon-with-slanted-label-highlight.png" id="3_eo12r"]
+[ext_resource type="Texture2D" uid="uid://cggfryinjir2q" path="res://Art/ui textures/small-icon-with-slanted-label-disabled.png" id="4_ivck7"]
+[ext_resource type="Script" path="res://Code/UI/event_choice_button.gd" id="5_7usyr"]
+[ext_resource type="LabelSettings" uid="uid://mdibv8iglkh0" path="res://Prefabs/UI/event_button_font.tres" id="6_veuvc"]
+
+[node name="ChoiceButtonMirror" type="TextureButton"]
+offset_right = 8.0
+offset_bottom = 8.0
+texture_normal = ExtResource("1_celcx")
+texture_pressed = ExtResource("2_xyn66")
+texture_hover = ExtResource("3_eo12r")
+texture_disabled = ExtResource("4_ivck7")
+script = ExtResource("5_7usyr")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 49.0
+offset_right = 465.0
+offset_bottom = 94.0
+text = "accept the alien invasion idk "
+label_settings = ExtResource("6_veuvc")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Resources" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 25.0
+offset_top = 21.0
+offset_right = 100.0
+offset_bottom = 93.0

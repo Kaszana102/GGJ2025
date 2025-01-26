@@ -51,6 +51,3 @@ mesh = SubResource("SphereMesh_ck0kp")
 script = ExtResource("3_saixt")
 
 [node name="ColonyUi" parent="." instance=ExtResource("4_pfcfw")]
-offset_left = 200.0
-offset_top = 561.0
-offset_right = -200.0

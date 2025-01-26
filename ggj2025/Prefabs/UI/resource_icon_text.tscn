@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://5owtr64maiex"]
+
+[ext_resource type="Texture2D" uid="uid://db6end4p4j1nv" path="res://Art/ui textures/terraformation-icon.png" id="1_pvrei"]
+[ext_resource type="Script" path="res://Code/UI/resource_icon_text.gd" id="1_xnfee"]
+[ext_resource type="Script" path="res://Code/UI/resource_icon.gd" id="2_s5pea"]
+[ext_resource type="LabelSettings" uid="uid://c6php7mdh4lh0" path="res://Prefabs/UI/resource_icon_font.tres" id="3_5q5pb"]
+
+[node name="ResourceIconText" type="BoxContainer"]
+size_flags_vertical = 0
+script = ExtResource("1_xnfee")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("1_pvrei")
+stretch_mode = 4
+script = ExtResource("2_s5pea")
+
+[node name="Count" type="Label" parent="."]
+layout_mode = 2
+text = "+ 200"
+label_settings = ExtResource("3_5q5pb")
