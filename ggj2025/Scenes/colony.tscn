@@ -9,13 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://bnxq3872mylml" path="res://Art/audio/error1.wav" id="3_r4myi"]
 [ext_resource type="Script" path="res://Code/structures/structure.gd" id="5_16hx2"]
 [ext_resource type="PackedScene" uid="uid://b8hubehg3ensk" path="res://Prefabs/Ore/coal_ore.tscn" id="7_mf18p"]
-[ext_resource type="PackedScene" uid="uid://cbdvd24cnr7co" path="res://Prefabs/Structures/city.tscn" id="8_iw6m8"]
+[ext_resource type="PackedScene" uid="uid://dyd7sto07crqg" path="res://Prefabs/Structures/city.tscn" id="8_iw6m8"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="9_l7d7i"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_us316"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
+[ext_resource type="PackedScene" uid="uid://xo4ddymu6n1k" path="res://Prefabs/UI/start_info.tscn" id="11_ohs0w"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="12_oosjl"]
 [ext_resource type="Script" path="res://Code/Camera/camera_movement.gd" id="13_l70im"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/resource_display.tscn" id="16_xkkvd"]
+[ext_resource type="PackedScene" uid="uid://mske5vq782j4" path="res://Prefabs/UI/resource_display.tscn" id="16_xkkvd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cayto"]
 albedo_texture = ExtResource("1_rcylo")

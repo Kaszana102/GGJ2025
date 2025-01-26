@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd61h0nt3tsn7"]
+[gd_scene load_steps=11 format=3 uid="uid://bc1nv7mrt8tfx"]
 
 [ext_resource type="Script" path="res://Code/UI/billboard.gd" id="1_cbqea"]
 [ext_resource type="Script" path="res://Code/UI/city_ui.gd" id="1_wa5o0"]
-[ext_resource type="Texture2D" uid="uid://bmqt1iafsdo38" path="res://icon.svg" id="2_10p7q"]
+[ext_resource type="Texture2D" uid="uid://rkqnw4r1rfvj" path="res://Art/icons/power_plant.png" id="3_jyb1n"]
 [ext_resource type="Script" path="res://Code/UI/clickable_object_3d.gd" id="3_sm02w"]
+[ext_resource type="Texture2D" uid="uid://kivw7in1etp1" path="res://Art/icons/farm.png" id="5_v7rgv"]
+[ext_resource type="Texture2D" uid="uid://c7fxnfvmwbtf" path="res://Art/icons/switch.png" id="6_b7iuf"]
+[ext_resource type="Texture2D" uid="uid://d0hx64yttmgs1" path="res://Art/icons/coal.png" id="7_sexhi"]
+[ext_resource type="Texture2D" uid="uid://c3m835oj540od" path="res://Art/icons/iron.png" id="8_tli62"]
+[ext_resource type="Texture2D" uid="uid://dv1xeilxlch0l" path="res://Art/icons/terraform.png" id="9_x4g2r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5rjsa"]
 size = Vector3(1, 1, 0.1)
@@ -15,9 +20,9 @@ script = ExtResource("1_wa5o0")
 script = ExtResource("1_cbqea")
 
 [node name="Power" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47011, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.00802, 0)
 no_depth_test = true
-texture = ExtResource("2_10p7q")
+texture = ExtResource("3_jyb1n")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/Power"]
 script = ExtResource("3_sm02w")
@@ -26,9 +31,9 @@ script = ExtResource("3_sm02w")
 shape = SubResource("BoxShape3D_5rjsa")
 
 [node name="BuildFarm" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.356297, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57747, 0.356297, 0)
 no_depth_test = true
-texture = ExtResource("2_10p7q")
+texture = ExtResource("5_v7rgv")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildFarm"]
 script = ExtResource("3_sm02w")
@@ -37,9 +42,9 @@ script = ExtResource("3_sm02w")
 shape = SubResource("BoxShape3D_5rjsa")
 
 [node name="BuildGenerator" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.356297, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82713, 0.356297, 0)
 no_depth_test = true
-texture = ExtResource("2_10p7q")
+texture = ExtResource("6_b7iuf")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildGenerator"]
 script = ExtResource("3_sm02w")
@@ -48,9 +53,9 @@ script = ExtResource("3_sm02w")
 shape = SubResource("BoxShape3D_5rjsa")
 
 [node name="BuildCoal" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.712594, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11978, 2.02489, 0)
 no_depth_test = true
-texture = ExtResource("2_10p7q")
+texture = ExtResource("7_sexhi")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildCoal"]
 script = ExtResource("3_sm02w")
@@ -59,9 +64,9 @@ script = ExtResource("3_sm02w")
 shape = SubResource("BoxShape3D_5rjsa")
 
 [node name="BuildIron" type="Sprite3D" parent="Billboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10747, 0.712594, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22924, 1.94079, 0)
 no_depth_test = true
-texture = ExtResource("2_10p7q")
+texture = ExtResource("8_tli62")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildIron"]
 script = ExtResource("3_sm02w")
@@ -71,7 +76,7 @@ shape = SubResource("BoxShape3D_5rjsa")
 
 [node name="BuildTerraform" type="Sprite3D" parent="Billboard"]
 no_depth_test = true
-texture = ExtResource("2_10p7q")
+texture = ExtResource("9_x4g2r")
 
 [node name="ClickableObject3D" type="Area3D" parent="Billboard/BuildTerraform"]
 script = ExtResource("3_sm02w")
