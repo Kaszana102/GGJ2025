@@ -21,9 +21,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -507.0
-offset_top = 145.0
+offset_top = 197.81
 offset_right = 507.0
-offset_bottom = 595.0
+offset_bottom = 754.81
 grow_horizontal = 2
 
 [node name="TitleBackground" type="TextureRect" parent="Layout"]
