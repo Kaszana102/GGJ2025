@@ -2,6 +2,8 @@ extends Node
 
 ## Game manager which controls the state of the game
 
+enum GameState {PLAYING,FAILED, WIN}
+
 ## Key: [Resources.type]
 ## Value: float
 var resources : Dictionary= {} 
@@ -13,12 +15,16 @@ var cities: Array[City]
 var ore_deposits: Dictionary={}
 
 var _blackout : bool = false
-
 var frame_duration : float = 0.1
+
+var state: GameState = GameState.PLAYING
 
 func _init() -> void:
 	for type in Resources.type.values():
-		resources[type] = 0
+		if type == Resources.type.TERRAFORMATION:
+			resources[type] = 100
+		else:
+			resources[type] = 0
 	for type in Ore.type.values():
 		ore_deposits[type] = []
 
@@ -40,6 +46,14 @@ func _fixed_process() -> void:
 		else:
 			_produce(delta)
 		update_ui()
+	if state == GameState.PLAYING:
+		if resources.get(Resources.type.TERRAFORMATION )<= 0:
+			state = GameState.FAILED
+			fail_game()
+		if resources.get(Resources.type.TERRAFORMATION) >= 1000:
+			state = GameState.WIN
+			win_game()
+	
 
 func add_city(city: City):
 	cities.append(city)
@@ -121,3 +135,13 @@ func get_ore_deposit(point:Vector3, ore_type: Ore.type)->Ore:
 		if distance <= 1:
 			return deposit
 	return null
+
+func fail_game():
+	var fail_ui = load("res://Prefabs/UI/fail_screen.tscn")
+	var instance = fail_ui.instantiate()
+	add_child(instance)
+	
+func win_game():
+	var win_ui = load("res://Prefabs/UI/win_screen.tscn")
+	var instance = win_ui.instantiate()
+	add_child(instance)
