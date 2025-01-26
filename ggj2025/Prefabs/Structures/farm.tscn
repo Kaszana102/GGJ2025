@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Code/structures/resource_requirement.gd" id="2_5x31f"]
 [ext_resource type="Script" path="res://Code/structures/production.gd" id="2_xp0pm"]
 [ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="4_0xd3d"]
+[ext_resource type="PackedScene" uid="uid://v11rhubhlivl" path="res://Prefabs/Environment/Farm/farm.tscn" id="5_qb8b8"]
 
 [sub_resource type="Resource" id="Resource_f2tbd"]
 script = ExtResource("2_xp0pm")
@@ -20,11 +21,9 @@ script = ExtResource("4_0xd3d")
 products = Array[ExtResource("2_xp0pm")]([SubResource("Resource_f2tbd")])
 requirement = SubResource("Resource_6m56w")
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sty1g"]
-
 [node name="Farm" type="Node3D"]
 script = ExtResource("1_k8wq4")
 production = SubResource("Resource_p0d13")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_sty1g")
+[node name="Farm" parent="." instance=ExtResource("5_qb8b8")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.148, 0)
