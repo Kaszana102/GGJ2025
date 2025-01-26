@@ -2,13 +2,12 @@ extends Node
 
 ## Game manager which controls the state of the game
 
+enum GameState {PLAYING,FAILED, WIN}
+
 ## Key: [Resources.type]
 ## Value: float
 var resources : Dictionary= {} 
-## list of all non generating power structures
-var structures: Array[Structure]
-## list of all non generating power structures
-var power_generators: Array[Structure]
+
 var cities: Array[City]
 ## dictionary of available ore deposits on the map
 ## key: ore type
@@ -16,12 +15,16 @@ var cities: Array[City]
 var ore_deposits: Dictionary={}
 
 var _blackout : bool = false
-
 var frame_duration : float = 0.1
+
+var state: GameState = GameState.PLAYING
 
 func _init() -> void:
 	for type in Resources.type.values():
-		resources[type] = 0
+		if type == Resources.type.TERRAFORMATION:
+			resources[type] = 100
+		else:
+			resources[type] = 0
 	for type in Ore.type.values():
 		ore_deposits[type] = []
 
@@ -37,18 +40,20 @@ func _ready() -> void:
 func _fixed_process() -> void:
 	var delta := frame_duration
 	if !_blackout:
-		var energy_sum = calc_energy(delta)
+		var energy_sum = calc_energy()
 		if energy_sum < 0:
 			_start_blackout()
 		else:
 			_produce(delta)
 		update_ui()
-
-func add_structure(structure : Structure):
-	structures.append(structure)
+	if state == GameState.PLAYING:
+		if resources.get(Resources.type.TERRAFORMATION )<= 0:
+			state = GameState.FAILED
+			fail_game()
+		if resources.get(Resources.type.TERRAFORMATION) >= 1000:
+			state = GameState.WIN
+			win_game()
 	
-func add_generator(generator : Structure):
-	power_generators.append(generator)
 
 func add_city(city: City):
 	cities.append(city)
@@ -56,26 +61,24 @@ func add_city(city: City):
 func add_deposit(ore: Ore, type: Ore.type):
 	ore_deposits.get(type).append(ore)
 	
-func calc_energy(delta: float) -> float:
-	resources[Resources.type.ENERGY] = 0
-	for generator in power_generators:
-		if generator.active:
-			generator.produce(delta) # energy added to resources
+func calc_energy() -> float:
+	var energy = 0	
 	
-	var energy_consumption = 0
-	for structure in structures:
-		if structure.active:
-			energy_consumption += structure.energy_consumption * delta
-	return (resources.get(Resources.type.ENERGY)-energy_consumption) * (1.0/delta)
+	for city in cities:
+		energy += city.calc_energy()
+	
+	resources[Resources.type.ENERGY] = energy	 
+	return energy
 
 func _start_blackout():
 	print("BLACKOUT")
 	_blackout = true
 
 func _produce(delta: float):
-	for structure in structures:
-		if structure.active:
-			structure.produce(delta)
+	for city in cities:
+		if city.active:
+			city.produce(delta)
+	
 
 ## get resources from the game manager
 ## returns true if succesful
@@ -110,10 +113,6 @@ func outside_min_range(ghost_pos: Vector3, min_radius:float)->bool:
 		var distance := city.position.distance_to(ghost_pos)
 		if  distance <  min_radius:
 			return false
-	for structure in structures:
-		var distance := structure.position.distance_to(ghost_pos)
-		if  distance < min_radius:
-			return false
 	return true
 
 func in_city_max_range(ghost_pos: Vector3, max_radius:float)->bool:
@@ -136,3 +135,13 @@ func get_ore_deposit(point:Vector3, ore_type: Ore.type)->Ore:
 		if distance <= 1:
 			return deposit
 	return null
+
+func fail_game():
+	var fail_ui = load("res://Prefabs/UI/fail_screen.tscn")
+	var instance = fail_ui.instantiate()
+	add_child(instance)
+	
+func win_game():
+	var win_ui = load("res://Prefabs/UI/win_screen.tscn")
+	var instance = win_ui.instantiate()
+	add_child(instance)
