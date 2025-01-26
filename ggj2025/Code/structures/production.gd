@@ -6,8 +6,8 @@ extends Resource
 ## amount per second
 @export var amount: float
 	
-static func construct(type: Resources.type, amount: float) -> Resource:
-	var resource : Resource = Resource.new()
-	resource.type = type
-	resource.amount = amount
+static func construct(_type: Resources.type, _amount: float) -> Production:
+	var resource : Production = Production.new()
+	resource.type = _type
+	resource.amount = _amount
 	return resource

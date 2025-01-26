@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://1kbwaa3jprxn"]
+[gd_scene load_steps=23 format=3 uid="uid://1kbwaa3jprxn"]
 
 [ext_resource type="Script" path="res://Code/Camera/camera_raycast.gd" id="1_egydw"]
 [ext_resource type="Script" path="res://Code/UI/test_ui.gd" id="2_njneh"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="5_pny3v"]
 [ext_resource type="PackedScene" uid="uid://b8hubehg3ensk" path="res://Prefabs/Ore/coal_ore.tscn" id="7_g7mb2"]
 [ext_resource type="PackedScene" path="res://Prefabs/Structures/city.tscn" id="8_fowyc"]
-[ext_resource type="Resource" uid="uid://cyx0rb733ukal" path="res://Productions/Balance1.tres" id="9_w7j2d"]
+[ext_resource type="Script" path="res://Code/structures/production.gd" id="9_ts0xk"]
+[ext_resource type="Script" path="res://Code/structures/production_balance.gd" id="10_s1rcb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e3qe"]
 
@@ -48,6 +49,25 @@ _bundled = {
 
 [sub_resource type="BoxMesh" id="BoxMesh_tmk0w"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="Resource" id="Resource_bi4vb"]
+script = ExtResource("9_ts0xk")
+type = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_vidl6"]
+script = ExtResource("9_ts0xk")
+type = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_0gba1"]
+script = ExtResource("9_ts0xk")
+type = 3
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_272r2"]
+script = ExtResource("10_s1rcb")
+products = Array[ExtResource("9_ts0xk")]([SubResource("Resource_bi4vb"), SubResource("Resource_vidl6"), SubResource("Resource_0gba1")])
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_64b4b"]
 height = 0.001
@@ -108,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 script = ExtResource("5_0tr3g")
 energy_consumption = 0.0
-production = ExtResource("9_w7j2d")
+production = SubResource("Resource_272r2")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63388, 0)
