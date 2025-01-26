@@ -11,23 +11,15 @@
 [ext_resource type="PackedScene" uid="uid://bftovcosquba4" path="res://Prefabs/Structures/Ghosts/iron_mine_ghost.tscn" id="8_v37mu"]
 [ext_resource type="PackedScene" uid="uid://cnxqlfqslkxoh" path="res://Prefabs/Structures/Ghosts/terraformation_ghost.tscn" id="9_ysd1l"]
 
-[node name="ColonyUi" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ColonyUi" type="Node3D"]
 script = ExtResource("1_jkll5")
 
 [node name="ResourceDisplay" type="HBoxContainer" parent="."]
-layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_t6ejh")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -83,8 +75,7 @@ text = "Terraform"
 script = ExtResource("2_6hutb")
 _structure_ghost = ExtResource("9_ysd1l")
 
-[node name="BlackOutUI" type="HBoxContainer" parent="."]
-layout_mode = 1
+[node name="BlackOutUI" type="HBoxContainer" parent="." node_paths=PackedStringArray("turn_on_audio_source")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -92,3 +83,6 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 script = ExtResource("2_p513n")
+turn_on_audio_source = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BlackOutUI"]

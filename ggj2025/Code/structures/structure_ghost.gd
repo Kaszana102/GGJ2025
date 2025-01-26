@@ -102,7 +102,7 @@ func _close_enough_from_ore()->bool :
 		return close_enough
 	return true
 
-func place() -> Structure:
+func place() -> City:
 	if not can_place():
 		return null
 		
