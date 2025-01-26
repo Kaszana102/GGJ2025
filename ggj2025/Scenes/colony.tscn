@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://clwghx1g1npbk"]
+[gd_scene load_steps=22 format=3 uid="uid://clwghx1g1npbk"]
 
 [ext_resource type="PackedScene" uid="uid://dkdu5kucvf6n1" path="res://Prefabs/UI/colony_ui.tscn" id="1_agxwj"]
 [ext_resource type="Script" path="res://Code/Events/EventManager.gd" id="1_av1yu"]
@@ -32,19 +32,9 @@ script = ExtResource("9_l7d7i")
 type = 1
 amount = 10.0
 
-[sub_resource type="Resource" id="Resource_vidl6"]
-script = ExtResource("9_l7d7i")
-type = 0
-amount = 10.0
-
-[sub_resource type="Resource" id="Resource_0gba1"]
-script = ExtResource("9_l7d7i")
-type = 3
-amount = 20.0
-
 [sub_resource type="Resource" id="Resource_m4uml"]
 script = ExtResource("10_us316")
-products = Array[ExtResource("9_l7d7i")]([SubResource("Resource_bi4vb"), SubResource("Resource_vidl6"), SubResource("Resource_0gba1")])
+products = Array[ExtResource("9_l7d7i")]([SubResource("Resource_bi4vb")])
 
 [node name="Colony" type="Node3D"]
 

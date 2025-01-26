@@ -25,6 +25,8 @@ func _init() -> void:
 	for type in Resources.type.values():
 		if type == Resources.type.TERRAFORMATION:
 			resources[type] = 100
+		elif type == Resources.type.IRON:
+			resources[type] = 200
 		else:
 			resources[type] = 0
 	for type in Ore.type.values():
