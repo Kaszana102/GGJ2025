@@ -1,11 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://v11rhubhlivl"]
+[gd_scene load_steps=5 format=3 uid="uid://v11rhubhlivl"]
 
-[ext_resource type="PackedScene" uid="uid://oluf4y4ah8ab" path="res://Art/models/blender/layout/farm.blend" id="1_cywmh"]
 [ext_resource type="PackedScene" uid="uid://cxqj3tyko8rj3" path="res://Art/models/blender/farm/wheat_field.blend" id="2_p64v5"]
+[ext_resource type="PackedScene" uid="uid://cegdp4rosuyc5" path="res://Art/models/blender/farm/windmill.blend" id="3_rosqm"]
+[ext_resource type="PackedScene" uid="uid://cdsf416bx1j8k" path="res://Prefabs/Environment/Farm/tree.tscn" id="4_4acwl"]
+[ext_resource type="PackedScene" uid="uid://cwq552s4k7au8" path="res://Art/models/blender/farm/fence.blend" id="4_tgfbi"]
 
 [node name="Farm" type="Node3D"]
 
-[node name="farm" parent="." instance=ExtResource("1_cywmh")]
-
 [node name="wheat_field" parent="." instance=ExtResource("2_p64v5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -5.75, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33609, -5.75, 7.51246)
+
+[node name="windmill" parent="." instance=ExtResource("3_rosqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9937, -4.76837e-07, 13.1807)
+
+[node name="Tree" parent="." instance=ExtResource("4_4acwl")]
+transform = Transform3D(0.473138, 0, -0.765598, 0, 0.9, 0, 0.765598, 0, 0.473138, 8.21918, -3.82023, -12.8503)
+
+[node name="Tree2" parent="." instance=ExtResource("4_4acwl")]
+transform = Transform3D(-0.767258, 0, 0.22653, 0, 0.8, 0, -0.22653, 0, -0.767258, -2.75577, -3.51247, -15.8859)
+
+[node name="Tree3" parent="." instance=ExtResource("4_4acwl")]
+transform = Transform3D(-0.469392, 0, -0.64782, 0, 0.8, 0, 0.64782, 0, -0.469392, -14.196, -4.35587, -9.13527)
+
+[node name="fence" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.984056, 0, 0.177858, 0, 1, 0, -0.177858, 0, -0.984056, -4.91273, -5.37848, 21.9261)
+
+[node name="fence2" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.996322, -0.00704988, -0.085398, -0.00703519, 0.999975, -0.000472951, 0.0853992, 0.000129579, -0.996347, 4.91864, -5.04434, 22.4505)
+
+[node name="fence3" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.955605, 0.000113374, -0.294656, -6.60962e-05, 1, 0.000599073, 0.294656, 0.000591953, -0.955604, 14.2914, -4.75811, 20.8818)
+
+[node name="fence4" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.439534, 0.00567077, -0.898212, -0.00362558, 0.999962, 0.00808728, 0.898222, 0.00681113, -0.439495, 21.0336, -5.00627, 14.6962)
+
+[node name="fence5" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(0.199437, 0, -0.979911, 0, 1, 0, 0.979911, 0, 0.199437, 23.1516, -5.04557, 4.90769)
+
+[node name="fence6" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(0.394584, 0, -0.91886, 0, 1, 0, 0.91886, 0, 0.394584, 19.8095, -5.27142, -2.81424)
+
+[node name="fence7" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.997191, 0, 0.0749081, 0, 1, 0, -0.0749081, 0, -0.997191, 12.7865, -5.14581, -6.58833)
+
+[node name="fence8" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(0.999945, 0, -0.0105397, 0, 1, 0, 0.0105397, 0, 0.999945, 3.19255, -4.5995, -6.04428)
+
+[node name="fence9" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(0.993164, 0, 0.116744, 0, 1, 0, -0.116744, 0, 0.993164, -5.91847, -5.41273, -5.26276)
+
+[node name="fence10" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(0.405503, 0, 0.914098, 0, 1, 0, -0.914098, 0, 0.405503, -11.7398, -4.78097, -0.772221)
+
+[node name="fence11" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.770648, 0, 0.637271, 0, 1, 0, -0.637271, 0, -0.770648, -16.2448, -5.19296, 10.2525)
+
+[node name="fence12" parent="." instance=ExtResource("4_tgfbi")]
+transform = Transform3D(-0.495112, 0, 0.868839, 0, 1, 0, -0.868839, 0, -0.495112, -12.083, -5.06523, 17.5029)
